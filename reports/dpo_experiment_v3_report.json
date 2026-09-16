@@ -1,0 +1,177 @@
+{
+  "benchmark": "OneInbox Real-Estate Suite (8 Scenarios)",
+  "experiment": "DPO Experiment V3: Trajectory-Aware / Structured Tool-Use Optimization",
+  "timestamp": "2026-09-15T06:15:37Z",
+  "base_model": {
+    "version": "qwen2.5_0.5b_base_v3",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": null,
+    "overall_pass_rate": 0.125,
+    "passed_count": 1,
+    "total_count": 8
+  },
+  "dpo_model": {
+    "version": "qwen2.5_0.5b_dpo_v3",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": "experiments/dpo_qwen05b_v3/adapter",
+    "overall_pass_rate": 0.125,
+    "passed_count": 1,
+    "total_count": 8
+  },
+  "comparison_matrix": [
+    {
+      "scenario_id": "RE-001",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.70075,
+      "compare_score": 0.3385,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 46599.3,
+      "compare_latency_ms": 45330.5,
+      "delta_latency_ms": -1268.800000000003,
+      "reasons": [
+        "task_success: pass \u2192 fail",
+        "tool_correctness: 0.67 \u2192 0.17"
+      ]
+    },
+    {
+      "scenario_id": "RE-002",
+      "scenario_name": "",
+      "base_passed": true,
+      "compare_passed": false,
+      "base_score": 1.0,
+      "compare_score": 0.75,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 10496.6,
+      "compare_latency_ms": 19826.0,
+      "delta_latency_ms": 9329.4,
+      "reasons": [
+        "tool_correctness: 1.00 \u2192 0.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-003",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.625,
+      "compare_score": 0.84375,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 14914.9,
+      "compare_latency_ms": 25815.5,
+      "delta_latency_ms": 10900.6,
+      "reasons": [
+        "task_success: fail \u2192 pass",
+        "tool_correctness: 0.50 \u2192 0.38"
+      ]
+    },
+    {
+      "scenario_id": "RE-004",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": true,
+      "base_score": 0.625,
+      "compare_score": 1.0,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 7341.6,
+      "compare_latency_ms": 6082.9,
+      "delta_latency_ms": -1258.7000000000007,
+      "reasons": [
+        "task_success: fail \u2192 pass",
+        "tool_correctness: 0.50 \u2192 1.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-005",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.5,
+      "classification": "unchanged",
+      "severity": "none",
+      "base_latency_ms": 4096.0,
+      "compare_latency_ms": 13847.8,
+      "delta_latency_ms": 9751.8,
+      "reasons": [
+        "No meaningful change"
+      ]
+    },
+    {
+      "scenario_id": "RE-006",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.5,
+      "classification": "unchanged",
+      "severity": "none",
+      "base_latency_ms": 12996.7,
+      "compare_latency_ms": 23078.0,
+      "delta_latency_ms": 10081.3,
+      "reasons": [
+        "No meaningful change"
+      ]
+    },
+    {
+      "scenario_id": "RE-007",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.91675,
+      "compare_score": 0.5,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 19231.2,
+      "compare_latency_ms": 24689.8,
+      "delta_latency_ms": 5458.5999999999985,
+      "reasons": [
+        "task_success: pass \u2192 fail",
+        "tool_correctness: 0.67 \u2192 0.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-008",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5625,
+      "compare_score": 0.379,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 17761.5,
+      "compare_latency_ms": 29672.6,
+      "delta_latency_ms": 11911.099999999999,
+      "reasons": [
+        "constraint_adherence: fail \u2192 pass",
+        "tool_correctness: 1.00 \u2192 0.00",
+        "latency: pass \u2192 fail"
+      ]
+    }
+  ],
+  "regression_summary": {
+    "regressions_count": 3,
+    "improvements_count": 3,
+    "neutral_count": 2,
+    "inconclusive_count": 0,
+    "deployment_recommendation": "block_deployment",
+    "deployment_reasons": [
+      "3 CRITICAL/HIGH regression(s): ['RE-001', 'RE-002', 'RE-007']"
+    ]
+  },
+  "re004_analysis": {
+    "base_passed": false,
+    "dpo_passed": true,
+    "base_tools_called": [
+      "property_lookup"
+    ],
+    "dpo_tools_called": [],
+    "base_actual_outcome": "appointment_booked",
+    "dpo_actual_outcome": "clarification_requested"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "experiment": "V5: Tool-Routing Discrimination + Escalation Preservation",
+  "total_candidate_pairs": 43,
+  "total_validated_pairs": 43,
+  "validation_errors": 0,
+  "train_count": 34,
+  "val_count": 9,
+  "holdout_ids": [
+    "AMB-001",
+    "RE-004",
+    "RE-005"
+  ],
+  "holdout_verified": true,
+  "fingerprint_overlap": 0,
+  "category_distribution": {
+    "cat10_tool_order": 3,
+    "cat1_routing_core": 10,
+    "cat2_prerequisite": 4,
+    "cat3_valid_booking": 4,
+    "cat4_info_only": 3,
+    "cat5_availability_only": 3,
+    "cat6_ambiguity": 5,
+    "cat7_escalation": 5,
+    "cat8_alternatives": 2,
+    "cat9_tool_args": 4
+  },
+  "decision_type_distribution": {
+    "escalation": 5,
+    "no_tool": 5,
+    "required_tool": 22,
+    "tool_args": 4,
+    "tool_order": 7
+  },
+  "files": {
+    "raw_preferences": "data\\preferences\\trajectory_preferences_v5.jsonl",
+    "raw_sha256": "19aef584214f4c890e5ff2a71bcc3cdac55c2e63d14645ef6efff750d6454a7b",
+    "train_formatted": "data\\preferences\\dpo_train_formatted_v5.jsonl",
+    "train_sha256": "fad9aecded4a4ee4d7f05e57d158a23008dd2806eefe0b5dd6557af58ef34ab6",
+    "val_formatted": "data\\preferences\\dpo_val_formatted_v5.jsonl",
+    "val_sha256": "dcd45d97544880d424a606fdf8b1a931b4f354551c56c6fdfb4db16004fb1228"
+  }
+}

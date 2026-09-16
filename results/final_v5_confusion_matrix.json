@@ -1,0 +1,236 @@
+{
+  "canonical": {
+    "base": {
+      "property_lookup": {
+        "property_lookup": 4,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 4,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 2,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "dpo": {
+      "property_lookup": {
+        "property_lookup": 2,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 3,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "base_sum": 19,
+    "dpo_sum": 19
+  },
+  "routing": {
+    "base": {
+      "property_lookup": {
+        "property_lookup": 1,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 3,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 2,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 2,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "dpo": {
+      "property_lookup": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 3,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "base_sum": 13,
+    "dpo_sum": 13
+  },
+  "overall_benchmark_21_scenarios": {
+    "base": {
+      "property_lookup": {
+        "property_lookup": 7,
+        "check_availability": 3,
+        "book_appointment": 3,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 7,
+        "book_appointment": 2,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 4,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 4,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 3,
+        "check_availability": 1,
+        "book_appointment": 2,
+        "no_tool": 2,
+        "escalation": 0
+      }
+    },
+    "dpo": {
+      "property_lookup": {
+        "property_lookup": 3,
+        "check_availability": 1,
+        "book_appointment": 3,
+        "no_tool": 8,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 3,
+        "book_appointment": 2,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 3,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 2,
+        "check_availability": 0,
+        "book_appointment": 2,
+        "no_tool": 4,
+        "escalation": 0
+      }
+    },
+    "base_sum": 41,
+    "dpo_sum": 41
+  }
+}

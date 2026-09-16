@@ -1,0 +1,23 @@
+{
+  "total_scenarios": 8,
+  "improved": [],
+  "regressed": [
+    "RE-002",
+    "RE-003",
+    "RE-004",
+    "RE-005",
+    "RE-006",
+    "RE-007",
+    "RE-008"
+  ],
+  "unchanged": [
+    "RE-001"
+  ],
+  "inconclusive": [],
+  "score_deltas": {
+    "task_success_delta": 0.0,
+    "tool_correctness_delta": 0.125,
+    "constraint_adherence_delta": -0.0313,
+    "latency_delta_ms": 9609.33
+  }
+}

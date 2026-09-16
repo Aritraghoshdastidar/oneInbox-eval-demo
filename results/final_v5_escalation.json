@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "base": {
+      "passed": 0,
+      "total": 4,
+      "rate": 0.0,
+      "task_success_rate": 0.0,
+      "tool_correctness_mean": 0.5,
+      "constraint_adherence_rate": 0.25
+    },
+    "dpo": {
+      "passed": 0,
+      "total": 4,
+      "rate": 0.0,
+      "task_success_rate": 0.0,
+      "tool_correctness_mean": 0.25,
+      "constraint_adherence_rate": 0.5
+    }
+  },
+  "base_metrics": {
+    "total_observations": 8,
+    "confusion_matrix_sum": 8,
+    "action_accuracy": 0.25,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 2,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 2,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 4,
+        "predicted_count": 4,
+        "true_positive": 2,
+        "precision": 0.5,
+        "recall": 0.5
+      },
+      "check_availability": {
+        "expected_count": 0,
+        "predicted_count": 2,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "book_appointment": {
+        "expected_count": 0,
+        "predicted_count": 2,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "no_tool": {
+        "expected_count": 0,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "escalation": {
+        "expected_count": 4,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 4,
+      "accuracy": 1.0,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 1.0,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "true_positives": 4,
+      "false_positives": 0,
+      "true_negatives": 0,
+      "false_negatives": 0
+    },
+    "argument_metrics": {
+      "overall_accuracy": 1.0,
+      "correct_arguments": 2,
+      "total_evaluated_arguments": 2,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 2,
+          "total": 2
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.0,
+      "correct_order": 0,
+      "eligible_scenarios": 0
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 4,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 4
+    }
+  },
+  "dpo_metrics": {
+    "total_observations": 8,
+    "confusion_matrix_sum": 8,
+    "action_accuracy": 0.125,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 2,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 4,
+        "predicted_count": 2,
+        "true_positive": 1,
+        "precision": 0.5,
+        "recall": 0.25
+      },
+      "check_availability": {
+        "expected_count": 0,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "book_appointment": {
+        "expected_count": 0,
+        "predicted_count": 2,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "no_tool": {
+        "expected_count": 0,
+        "predicted_count": 4,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "escalation": {
+        "expected_count": 4,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 4,
+      "accuracy": 0.5,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 0.5,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "true_positives": 2,
+      "false_positives": 0,
+      "true_negatives": 0,
+      "false_negatives": 2
+    },
+    "argument_metrics": {
+      "overall_accuracy": 1.0,
+      "correct_arguments": 1,
+      "total_evaluated_arguments": 1,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.0,
+      "correct_order": 0,
+      "eligible_scenarios": 0
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 4,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 4
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "scenarios": [
+    {
+      "id": "ROUTE-001",
+      "name": "Property information routing",
+      "description": "Customer asks about property details. Must route to property_lookup only.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Hi, I'd like to know more about PROP-103. What's the rent and what features does it have?"}
+      ],
+      "expected_intents": ["property_inquiry"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-103"}, "required": true}
+      ],
+      "expected_outcome": "information_provided",
+      "constraints": ["must_not_fabricate_price"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "ROUTE-002",
+      "name": "Availability routing",
+      "description": "Customer asks about a specific viewing slot. Must route to check_availability.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Is PROP-104 available for a viewing on Saturday September 20th at 3 PM?"}
+      ],
+      "expected_intents": ["check_availability"],
+      "expected_tool_calls": [
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-104", "date": "2026-09-20", "time": "15:00"}, "required": true}
+      ],
+      "expected_outcome": "information_provided",
+      "constraints": [],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "ROUTE-003",
+      "name": "Valid booking full sequence",
+      "description": "Customer wants to book a viewing. Full lookup -> availability -> book sequence required.",
+      "category": "normal",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I want to view PROP-104 this Saturday September 20th at 10 AM."},
+        {"role": "user", "content": "Yes, please book it. My name is Helen Park, email helen.park@email.com."}
+      ],
+      "expected_intents": ["property_inquiry", "check_availability", "book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-104"}, "required": false},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-104", "date": "2026-09-20", "time": "10:00"}, "required": true},
+        {"tool_name": "book_appointment", "arguments": {"property_id": "PROP-104", "date": "2026-09-20", "time": "10:00"}, "required": true}
+      ],
+      "expected_outcome": "appointment_booked",
+      "constraints": ["must_check_availability_before_booking"],
+      "max_latency_ms": 30000
+    },
+    {
+      "id": "ROUTE-004",
+      "name": "Unknown property booking must escalate",
+      "description": "Customer wants to book a viewing for PROP-303 (unknown). Must lookup, find NOT_FOUND, then escalate.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I'd like to schedule a viewing for PROP-303. A colleague recommended it."},
+        {"role": "user", "content": "Are you sure? They definitely said it was one of your listings."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-303"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown", "must_not_hallucinate_properties"],
+      "max_latency_ms": 20000
+    },
+    {
+      "id": "ROUTE-005",
+      "name": "Ambiguous property request routing",
+      "description": "Customer describes property by features without ID. Must not call any tools.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "I'm looking for a spacious townhouse with a smart home system. Do you have anything?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "ROUTE-006",
+      "name": "Unknown property but alternatives requested",
+      "description": "Customer learns property doesn't exist but explicitly asks for alternatives.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "I was looking for PROP-505 but I guess it doesn't exist. Can you show me what you do have available?"}
+      ],
+      "expected_intents": ["property_inquiry"],
+      "expected_tool_calls": [],
+      "expected_outcome": "information_provided",
+      "constraints": [],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "ROUTE-007",
+      "name": "Date/time argument accuracy trap",
+      "description": "Customer specifies an unusual time. Agent must preserve exact date and time in arguments.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Can you check availability for PROP-101 on Sunday September 21st at 10 AM?"}
+      ],
+      "expected_intents": ["check_availability"],
+      "expected_tool_calls": [
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-101", "date": "2026-09-21", "time": "10:00"}, "required": true}
+      ],
+      "expected_outcome": "information_provided",
+      "constraints": [],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "ROUTE-008",
+      "name": "Tool order prerequisite trap",
+      "description": "Customer wants immediate booking. Agent must not skip availability check.",
+      "category": "normal",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "Book me in for PROP-102 on Saturday September 20th at 10 AM right away."},
+        {"role": "user", "content": "My name is Ian Jones, email ian.jones@email.com, phone 555-0211."}
+      ],
+      "expected_intents": ["property_inquiry", "check_availability", "book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-102"}, "required": false},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-102", "date": "2026-09-20", "time": "10:00"}, "required": true},
+        {"tool_name": "book_appointment", "arguments": {"property_id": "PROP-102", "date": "2026-09-20", "time": "10:00"}, "required": true}
+      ],
+      "expected_outcome": "appointment_booked",
+      "constraints": ["must_check_availability_before_booking"],
+      "max_latency_ms": 30000
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": "v4a",
+  "total_pairs": 41,
+  "train_pairs": 37,
+  "val_pairs": 4,
+  "train_sha256": "eff782e2083e77a0bdce987a208008934cc6e68336c995df42324ba8914e34e3",
+  "val_sha256": "0dd2961821ae906dc757163db659d5b40ae7636b43cf0cc262db8bc2f9535fdc",
+  "holdout_scenarios": [
+    "RE-004",
+    "AMB-001"
+  ],
+  "train_scenarios": [
+    "AMB-002",
+    "AMB-003",
+    "AMB-004",
+    "AMB-005",
+    "AMB-006",
+    "RE-001",
+    "RE-002",
+    "RE-003",
+    "RE-005",
+    "RE-007",
+    "RE-008"
+  ],
+  "val_scenarios": [
+    "AMB-001",
+    "RE-004"
+  ],
+  "train_decision_type_distribution": {
+    "no_tool": 10,
+    "required_tool": 20,
+    "tool_order": 2,
+    "tool_args": 2,
+    "escalation": 3
+  },
+  "train_decision_type_percentages": {
+    "no_tool": 27.03,
+    "required_tool": 54.05,
+    "tool_order": 5.41,
+    "tool_args": 5.41,
+    "escalation": 8.11
+  },
+  "fingerprint_overlap": 0,
+  "re004_in_train": false,
+  "amb001_in_train": false
+}

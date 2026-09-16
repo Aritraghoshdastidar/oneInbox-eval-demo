@@ -1,0 +1,83 @@
+{
+  "dataset_name": "OneInbox DPO V2 Dataset",
+  "created_at": "2026-09-15T05:25:00Z",
+  "train": {
+    "file": "data\\preferences\\dpo_training_v2.jsonl",
+    "count": 18,
+    "sha256": "b1e28c1b992ddfc4b240de64ca08250ebce0bfa4d68ef9a07461ef3430f8bacc",
+    "scenarios": {
+      "AMB-002": 1,
+      "AMB-003": 1,
+      "AMB-004": 1,
+      "AMB-005": 1,
+      "AMB-006": 1,
+      "RE-001": 3,
+      "RE-008": 3,
+      "RE-005": 2,
+      "RE-003": 2,
+      "RE-007": 2,
+      "RE-002": 1
+    },
+    "learning_targets": {
+      "ambiguity_no_tool": 5,
+      "correct_tool_use": 8,
+      "workflow": 2,
+      "escalation": 2,
+      "constraint": 1
+    },
+    "fingerprints": [
+      "ea81d3078656d6e934a5d198f10898facff1c797942ce76e87e5c5b31f9cb5ca",
+      "5027e1e4d4ae08c6d48abfbed7176f5c033b3ca1939f3824b8c9cc97e5138b6a",
+      "30b25172293b990eda3b242becfb8e931fa7a5d9fb36a196b81ac21c3902ab54",
+      "4c6f34aee72fb22bca4e73a4db3bb802e814ed2a0a760c53ae1ca0dea4b7e3ce",
+      "779784be54c93aab1fd1d062dc3173b238b6abc4159659fa60244200994acbe6",
+      "91a85d44a50a5da8d2862b68607aeefc3c7d08f232a7b605eecbd231221578d7",
+      "e31f4d54ab59f73faa872417c45781a941341fcbea53da541cf777cc9b780ff4",
+      "a948d913e8f7c4a2b17218b9870759ad18494bdb69845192ac6d3d0f9ff9f6d2",
+      "ecd3fd561ce049ae960fa16178d5e215c1a869799d6795c42da06c4dad773a66",
+      "8dbda7dd9baabf4a02afe72b2f559d69a4ad6281bc20616b011939a8041025e5",
+      "cd7871bbe649593448f3ead7751a8bc037d68fcd3e456161baa23684a1da4f8c",
+      "440fc837edc04fff2363c60c513bc48094f181164c2426d521a044a7c74035df",
+      "318bf7633023025a4fed87a703dc1c2a62ed6854c83f212edff8fb851df6ed53",
+      "30ceadd403b300e52fbdcecd970eb5eab70ad1742eb3d56d88bb6514e2372e48",
+      "47416a889076a85deec302d4383a5d608895c8f3ff5e3a0174d8a608834804a8",
+      "d95737d7b8c13ea152a2f785e35adf990520135efa08e0b330ff750dddebe4bb",
+      "83142fa5b0da01702cd625ee4b4eadf2e9e9f5d1821013ff1f868463593eda10",
+      "cfc90ce29b9df3223f10ce19ccc02f1aacfa230f714d949c43dbb82bdfcc9806"
+    ]
+  },
+  "validation": {
+    "file": "data\\preferences\\dpo_validation_v2.jsonl",
+    "count": 8,
+    "sha256": "b5d437f633ef952534e3b71ce53c5a93c03b73110cda21aa9aa9d4356c0ecf4d",
+    "scenarios": {
+      "AMB-001": 1,
+      "RE-004": 2,
+      "RE-001": 1,
+      "RE-005": 1,
+      "RE-007": 1,
+      "RE-006": 2
+    },
+    "learning_targets": {
+      "ambiguity_no_tool": 3,
+      "correct_tool_use": 2,
+      "escalation": 1,
+      "workflow": 2
+    },
+    "fingerprints": [
+      "ecd54f669331b7c3085fcd5f7a0c77fd1e66071629dc6b00625a7a1af9e34096",
+      "3eb45037ad2a2d940e56f6d7acb355063374a69fc55cc08bab29c7114424bfd1",
+      "3576333e4dd3a6d700074c49704bbe02e8edb3e2ecb932ca86b9023ed8382a90",
+      "e2105ca3c88b2628472b142eb8a0fcb5db43ec22e963834498dbeb1e4fe2f61a",
+      "d55a6a4f3b075942c1505f6a5c979d0c40fa80fe0717922cb5b5f6726d48c1d8",
+      "d97889c26835b5bc6de1b99271fab5bb98d42af3b7732da2819e077445c755c8",
+      "9945bcd3be7c7e96030f2f05ee4b573b51d727d2fa60314b8ca8ba0517bf39d5",
+      "159caf33f9f7cc1e5177d8ea59a135aa2a0e48531db857a4a111eb39acf3c9c8"
+    ]
+  },
+  "holdout_protection": {
+    "re_004_in_train": false,
+    "amb_001_in_train": false,
+    "zero_leakage_verified": true
+  }
+}

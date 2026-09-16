@@ -1,0 +1,51 @@
+{
+  "dataset_version": "v2",
+  "created_at": "2026-09-15T04:22:47.747320Z",
+  "scenario_file_hash": "48257c7a2eccf0e405c80d84dbcc3adf3aead408950722bfb6027eb959da4086",
+  "evaluator_version": "p0",
+  "source_agent_versions": [
+    "v1.0",
+    "v1.1",
+    "v1.2_premature_action",
+    "v1.3_wrong_tool",
+    "v1.4_missed_escalation",
+    "v1.5_multi_intent",
+    "v1.6_constraint_violation"
+  ],
+  "included_scenario_ids": [
+    "RE-001",
+    "RE-002",
+    "RE-003",
+    "RE-004",
+    "RE-005",
+    "RE-006",
+    "RE-007",
+    "RE-008"
+  ],
+  "failure_categories": [
+    "constraint_violation",
+    "hallucination",
+    "incomplete_workflow",
+    "missed_escalation",
+    "wrong_tool",
+    "wrong_tool_arguments"
+  ],
+  "total_candidates": 54,
+  "training_eligible": 39,
+  "pairs_generated": 29,
+  "pairs_validated": 29,
+  "pairs_rejected": 0,
+  "duplicates_removed": 10,
+  "train_pairs": 21,
+  "val_pairs": 8,
+  "train_hash": "0c9e52f27931bacb687dc8744401bbd1909b088382ee123529e73388eda04873",
+  "val_hash": "1124486929d94b6fa75ccc83cbc970fcc89589715e49140820e2624addf47f9a",
+  "held_out_scenarios": [],
+  "dataset_hash": "0322c0a74f42aa074b9789ddae19a7a7920ce26f1caa5dd00026caf2643cacb6",
+  "limitations": [
+    "Dataset derived from 8-scenario synthetic benchmark — not production data.",
+    "Covers 6 controlled behavioral failure variants.",
+    "Evaluator strictly validates customer-facing responses against deterministic domain rules.",
+    "Chosen responses prioritize clean baseline v1.0 passing traces without internal policy leak."
+  ]
+}

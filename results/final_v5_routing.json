@@ -1,0 +1,433 @@
+{
+  "summary": {
+    "base": {
+      "passed": 2,
+      "total": 8,
+      "rate": 0.25,
+      "task_success_rate": 0.375,
+      "tool_correctness_mean": 0.625,
+      "constraint_adherence_rate": 0.875
+    },
+    "dpo": {
+      "passed": 1,
+      "total": 8,
+      "rate": 0.125,
+      "task_success_rate": 0.375,
+      "tool_correctness_mean": 0.6667,
+      "constraint_adherence_rate": 0.875
+    }
+  },
+  "base_metrics": {
+    "total_observations": 13,
+    "confusion_matrix_sum": 13,
+    "action_accuracy": 0.4615,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 1,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 3,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 2,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 2,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 4,
+        "predicted_count": 3,
+        "true_positive": 1,
+        "precision": 0.3333,
+        "recall": 0.25
+      },
+      "check_availability": {
+        "expected_count": 4,
+        "predicted_count": 4,
+        "true_positive": 3,
+        "precision": 0.75,
+        "recall": 0.75
+      },
+      "book_appointment": {
+        "expected_count": 2,
+        "predicted_count": 4,
+        "true_positive": 2,
+        "precision": 0.5,
+        "recall": 1.0
+      },
+      "no_tool": {
+        "expected_count": 2,
+        "predicted_count": 2,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "escalation": {
+        "expected_count": 1,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 8,
+      "accuracy": 0.625,
+      "required_tool_precision": 0.7143,
+      "required_tool_recall": 0.8333,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "true_positives": 5,
+      "false_positives": 2,
+      "true_negatives": 0,
+      "false_negatives": 1
+    },
+    "argument_metrics": {
+      "overall_accuracy": 0.8125,
+      "correct_arguments": 13,
+      "total_evaluated_arguments": 16,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 6,
+          "total": 6
+        },
+        "date": {
+          "correct": 3,
+          "total": 5
+        },
+        "time": {
+          "correct": 4,
+          "total": 5
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.5,
+      "correct_order": 1,
+      "eligible_scenarios": 2
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 1,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 1
+    }
+  },
+  "dpo_metrics": {
+    "total_observations": 13,
+    "confusion_matrix_sum": 13,
+    "action_accuracy": 0.4615,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 3,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 2,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 4,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "check_availability": {
+        "expected_count": 4,
+        "predicted_count": 5,
+        "true_positive": 3,
+        "precision": 0.6,
+        "recall": 0.75
+      },
+      "book_appointment": {
+        "expected_count": 2,
+        "predicted_count": 3,
+        "true_positive": 1,
+        "precision": 0.3333,
+        "recall": 0.5
+      },
+      "no_tool": {
+        "expected_count": 2,
+        "predicted_count": 5,
+        "true_positive": 2,
+        "precision": 0.4,
+        "recall": 1.0
+      },
+      "escalation": {
+        "expected_count": 1,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 8,
+      "accuracy": 0.75,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 0.6667,
+      "no_tool_precision": 0.5,
+      "no_tool_recall": 1.0,
+      "true_positives": 4,
+      "false_positives": 0,
+      "true_negatives": 2,
+      "false_negatives": 2
+    },
+    "argument_metrics": {
+      "overall_accuracy": 1.0,
+      "correct_arguments": 12,
+      "total_evaluated_arguments": 12,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 4,
+          "total": 4
+        },
+        "date": {
+          "correct": 4,
+          "total": 4
+        },
+        "time": {
+          "correct": 4,
+          "total": 4
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.0,
+      "correct_order": 0,
+      "eligible_scenarios": 2
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 1,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 1
+    }
+  },
+  "scenario_level_analysis": [
+    {
+      "scenario_id": "ROUTE-001",
+      "scenario_name": "Property information routing",
+      "expected_first_action": "property_lookup",
+      "expected_full_trajectory": [
+        "property_lookup"
+      ],
+      "base_first_action": "property_lookup",
+      "base_full_trajectory": [
+        "property_lookup"
+      ],
+      "base_passed": true,
+      "dpo_first_action": "no_tool",
+      "dpo_full_trajectory": [
+        "no_tool"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": true,
+      "routing_match_dpo": false
+    },
+    {
+      "scenario_id": "ROUTE-002",
+      "scenario_name": "Availability routing",
+      "expected_first_action": "check_availability",
+      "expected_full_trajectory": [
+        "check_availability"
+      ],
+      "base_first_action": "check_availability",
+      "base_full_trajectory": [
+        "check_availability"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "check_availability",
+      "dpo_full_trajectory": [
+        "check_availability"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": true,
+      "routing_match_dpo": true
+    },
+    {
+      "scenario_id": "ROUTE-003",
+      "scenario_name": "Valid booking full sequence",
+      "expected_first_action": "property_lookup",
+      "expected_full_trajectory": [
+        "property_lookup",
+        "check_availability",
+        "book_appointment"
+      ],
+      "base_first_action": "check_availability",
+      "base_full_trajectory": [
+        "check_availability",
+        "book_appointment"
+      ],
+      "base_passed": true,
+      "dpo_first_action": "check_availability",
+      "dpo_full_trajectory": [
+        "check_availability"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": false,
+      "routing_match_dpo": false
+    },
+    {
+      "scenario_id": "ROUTE-004",
+      "scenario_name": "Unknown property booking must escalate",
+      "expected_first_action": "property_lookup",
+      "expected_full_trajectory": [
+        "property_lookup"
+      ],
+      "base_first_action": "no_tool",
+      "base_full_trajectory": [
+        "no_tool"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "no_tool",
+      "dpo_full_trajectory": [
+        "no_tool"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": false,
+      "routing_match_dpo": false
+    },
+    {
+      "scenario_id": "ROUTE-005",
+      "scenario_name": "Ambiguous property request routing",
+      "expected_first_action": "no_tool",
+      "expected_full_trajectory": [
+        "no_tool"
+      ],
+      "base_first_action": "property_lookup",
+      "base_full_trajectory": [
+        "property_lookup"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "no_tool",
+      "dpo_full_trajectory": [
+        "no_tool"
+      ],
+      "dpo_passed": true,
+      "routing_match_base": false,
+      "routing_match_dpo": true
+    },
+    {
+      "scenario_id": "ROUTE-006",
+      "scenario_name": "Unknown property but alternatives requested",
+      "expected_first_action": "no_tool",
+      "expected_full_trajectory": [
+        "no_tool"
+      ],
+      "base_first_action": "property_lookup",
+      "base_full_trajectory": [
+        "property_lookup"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "no_tool",
+      "dpo_full_trajectory": [
+        "no_tool"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": false,
+      "routing_match_dpo": true
+    },
+    {
+      "scenario_id": "ROUTE-007",
+      "scenario_name": "Date/time argument accuracy trap",
+      "expected_first_action": "check_availability",
+      "expected_full_trajectory": [
+        "check_availability"
+      ],
+      "base_first_action": "check_availability",
+      "base_full_trajectory": [
+        "check_availability"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "check_availability",
+      "dpo_full_trajectory": [
+        "check_availability"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": true,
+      "routing_match_dpo": true
+    },
+    {
+      "scenario_id": "ROUTE-008",
+      "scenario_name": "Tool order prerequisite trap",
+      "expected_first_action": "property_lookup",
+      "expected_full_trajectory": [
+        "property_lookup",
+        "check_availability",
+        "book_appointment"
+      ],
+      "base_first_action": "book_appointment",
+      "base_full_trajectory": [
+        "book_appointment"
+      ],
+      "base_passed": false,
+      "dpo_first_action": "book_appointment",
+      "dpo_full_trajectory": [
+        "book_appointment"
+      ],
+      "dpo_passed": false,
+      "routing_match_base": false,
+      "routing_match_dpo": false
+    }
+  ]
+}

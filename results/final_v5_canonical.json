@@ -1,0 +1,669 @@
+{
+  "summary": {
+    "base": {
+      "passed": 1,
+      "total": 8,
+      "rate": 0.125,
+      "task_success_rate": 0.375,
+      "tool_correctness_mean": 0.6042,
+      "constraint_adherence_rate": 0.75
+    },
+    "dpo": {
+      "passed": 1,
+      "total": 8,
+      "rate": 0.125,
+      "task_success_rate": 0.375,
+      "tool_correctness_mean": 0.4688,
+      "constraint_adherence_rate": 0.75
+    }
+  },
+  "base_metrics": {
+    "total_observations": 19,
+    "confusion_matrix_sum": 19,
+    "action_accuracy": 0.5263,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 4,
+        "check_availability": 1,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 4,
+        "book_appointment": 1,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 1,
+        "book_appointment": 2,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 0,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 7,
+        "predicted_count": 6,
+        "true_positive": 4,
+        "precision": 0.6667,
+        "recall": 0.5714
+      },
+      "check_availability": {
+        "expected_count": 5,
+        "predicted_count": 6,
+        "true_positive": 4,
+        "precision": 0.6667,
+        "recall": 0.8
+      },
+      "book_appointment": {
+        "expected_count": 3,
+        "predicted_count": 5,
+        "true_positive": 2,
+        "precision": 0.4,
+        "recall": 0.6667
+      },
+      "no_tool": {
+        "expected_count": 1,
+        "predicted_count": 2,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "escalation": {
+        "expected_count": 3,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 8,
+      "accuracy": 0.75,
+      "required_tool_precision": 0.8571,
+      "required_tool_recall": 0.8571,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "true_positives": 6,
+      "false_positives": 1,
+      "true_negatives": 0,
+      "false_negatives": 1
+    },
+    "argument_metrics": {
+      "overall_accuracy": 0.6364,
+      "correct_arguments": 14,
+      "total_evaluated_arguments": 22,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 10,
+          "total": 10
+        },
+        "date": {
+          "correct": 2,
+          "total": 6
+        },
+        "time": {
+          "correct": 2,
+          "total": 6
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.6667,
+      "correct_order": 2,
+      "eligible_scenarios": 3
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 3,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 3
+    }
+  },
+  "dpo_metrics": {
+    "total_observations": 19,
+    "confusion_matrix_sum": 19,
+    "action_accuracy": 0.1579,
+    "confusion_matrix": {
+      "property_lookup": {
+        "property_lookup": 2,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "check_availability": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 4,
+        "escalation": 0
+      },
+      "book_appointment": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 3,
+        "escalation": 0
+      },
+      "no_tool": {
+        "property_lookup": 0,
+        "check_availability": 0,
+        "book_appointment": 0,
+        "no_tool": 1,
+        "escalation": 0
+      },
+      "escalation": {
+        "property_lookup": 1,
+        "check_availability": 0,
+        "book_appointment": 1,
+        "no_tool": 1,
+        "escalation": 0
+      }
+    },
+    "per_class_metrics": {
+      "property_lookup": {
+        "expected_count": 7,
+        "predicted_count": 3,
+        "true_positive": 2,
+        "precision": 0.6667,
+        "recall": 0.2857
+      },
+      "check_availability": {
+        "expected_count": 5,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "book_appointment": {
+        "expected_count": 3,
+        "predicted_count": 3,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "no_tool": {
+        "expected_count": 1,
+        "predicted_count": 13,
+        "true_positive": 1,
+        "precision": 0.0769,
+        "recall": 1.0
+      },
+      "escalation": {
+        "expected_count": 3,
+        "predicted_count": 0,
+        "true_positive": 0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "binary_tool_metrics": {
+      "total_scenarios": 8,
+      "accuracy": 0.5,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 0.4286,
+      "no_tool_precision": 0.2,
+      "no_tool_recall": 1.0,
+      "true_positives": 3,
+      "false_positives": 0,
+      "true_negatives": 1,
+      "false_negatives": 4
+    },
+    "argument_metrics": {
+      "overall_accuracy": 1.0,
+      "correct_arguments": 2,
+      "total_evaluated_arguments": 2,
+      "field_breakdown": {
+        "property_id": {
+          "correct": 2,
+          "total": 2
+        }
+      }
+    },
+    "order_metrics": {
+      "accuracy": 0.0,
+      "correct_order": 0,
+      "eligible_scenarios": 3
+    },
+    "escalation_metrics": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "expected_escalations": 3,
+      "correct_escalations": 0,
+      "false_escalations": 0,
+      "missed_escalations": 3
+    }
+  },
+  "regression_comparison": {
+    "base_version": "final_base_v5",
+    "compare_version": "final_dpo_v5",
+    "total_scenarios": 8,
+    "scenario_comparisons": [
+      {
+        "scenario_id": "RE-001",
+        "scenario_name": "",
+        "classification": "improved",
+        "severity": null,
+        "base_task_success": true,
+        "compare_task_success": true,
+        "base_tool_score": 0.667,
+        "compare_tool_score": 0.0,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.7075,
+        "compare_overall_score": 0.75,
+        "base_latency": {
+          "end_to_end_ms": 45926.5,
+          "llm_request_ms": 31332.1,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.1,
+          "retry_count": 3,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 22274.1,
+          "llm_request_ms": 17089.4,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "wrong_tool_arguments",
+          "wrong_tool_arguments",
+          "provider_latency"
+        ],
+        "compare_failure_categories": [
+          "wrong_tool",
+          "wrong_tool",
+          "wrong_tool"
+        ],
+        "change_reasons": [
+          "latency: fail \u2192 pass",
+          "tool_correctness: 0.67 \u2192 0.00"
+        ]
+      },
+      {
+        "scenario_id": "RE-002",
+        "scenario_name": "",
+        "classification": "regressed",
+        "severity": "medium",
+        "base_task_success": true,
+        "compare_task_success": true,
+        "base_tool_score": 1.0,
+        "compare_tool_score": 1.0,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": true,
+        "compare_overall_passed": false,
+        "base_overall_score": 1.0,
+        "compare_overall_score": 0.75,
+        "base_latency": {
+          "end_to_end_ms": 13249.9,
+          "llm_request_ms": 13245.2,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 1,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 43570.2,
+          "llm_request_ms": 43567.1,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 1,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [],
+        "compare_failure_categories": [
+          "provider_latency",
+          "tool_failure"
+        ],
+        "change_reasons": [
+          "latency: pass \u2192 fail"
+        ]
+      },
+      {
+        "scenario_id": "RE-003",
+        "scenario_name": "",
+        "classification": "regressed",
+        "severity": "high",
+        "base_task_success": false,
+        "compare_task_success": false,
+        "base_tool_score": 0.5,
+        "compare_tool_score": 0.25,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.625,
+        "compare_overall_score": 0.5625,
+        "base_latency": {
+          "end_to_end_ms": 20159.8,
+          "llm_request_ms": 20154.4,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 2,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 8743.1,
+          "llm_request_ms": 8740.3,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "incomplete_workflow",
+          "wrong_tool",
+          "wrong_tool_arguments",
+          "wrong_tool_arguments",
+          "wrong_tool"
+        ],
+        "compare_failure_categories": [
+          "incomplete_workflow",
+          "wrong_tool",
+          "wrong_tool",
+          "wrong_tool",
+          "wrong_tool"
+        ],
+        "change_reasons": [
+          "tool_correctness: 0.50 \u2192 0.25"
+        ]
+      },
+      {
+        "scenario_id": "RE-004",
+        "scenario_name": "",
+        "classification": "improved",
+        "severity": null,
+        "base_task_success": false,
+        "compare_task_success": true,
+        "base_tool_score": 0.5,
+        "compare_tool_score": 1.0,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": false,
+        "compare_overall_passed": true,
+        "base_overall_score": 0.625,
+        "compare_overall_score": 1.0,
+        "base_latency": {
+          "end_to_end_ms": 10334.5,
+          "llm_request_ms": 10331.7,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 1,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 5191.7,
+          "llm_request_ms": 5191.1,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "incomplete_workflow"
+        ],
+        "compare_failure_categories": [],
+        "change_reasons": [
+          "task_success: fail \u2192 pass",
+          "tool_correctness: 0.50 \u2192 1.00"
+        ]
+      },
+      {
+        "scenario_id": "RE-005",
+        "scenario_name": "",
+        "classification": "unchanged",
+        "severity": null,
+        "base_task_success": false,
+        "compare_task_success": false,
+        "base_tool_score": 0.0,
+        "compare_tool_score": 0.0,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.5,
+        "compare_overall_score": 0.5,
+        "base_latency": {
+          "end_to_end_ms": 5423.2,
+          "llm_request_ms": 5420.3,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 8963.3,
+          "llm_request_ms": 8961.0,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "missed_escalation",
+          "wrong_tool"
+        ],
+        "compare_failure_categories": [
+          "incomplete_workflow",
+          "wrong_tool"
+        ],
+        "change_reasons": [
+          "No meaningful change"
+        ]
+      },
+      {
+        "scenario_id": "RE-006",
+        "scenario_name": "",
+        "classification": "unchanged",
+        "severity": null,
+        "base_task_success": false,
+        "compare_task_success": false,
+        "base_tool_score": 0.5,
+        "compare_tool_score": 0.5,
+        "base_constraint_passed": false,
+        "compare_constraint_passed": false,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.5,
+        "compare_overall_score": 0.5,
+        "base_latency": {
+          "end_to_end_ms": 16769.0,
+          "llm_request_ms": 16764.9,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 2,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 20865.6,
+          "llm_request_ms": 20862.8,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 1,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "missed_escalation",
+          "wrong_tool",
+          "wrong_tool",
+          "constraint_violation"
+        ],
+        "compare_failure_categories": [
+          "missed_escalation",
+          "wrong_tool",
+          "wrong_tool",
+          "constraint_violation"
+        ],
+        "change_reasons": [
+          "No meaningful change"
+        ]
+      },
+      {
+        "scenario_id": "RE-007",
+        "scenario_name": "",
+        "classification": "regressed",
+        "severity": "high",
+        "base_task_success": true,
+        "compare_task_success": false,
+        "base_tool_score": 0.667,
+        "compare_tool_score": 0.0,
+        "base_constraint_passed": true,
+        "compare_constraint_passed": true,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.91675,
+        "compare_overall_score": 0.5,
+        "base_latency": {
+          "end_to_end_ms": 24636.7,
+          "llm_request_ms": 24632.2,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.1,
+          "retry_count": 2,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 9681.0,
+          "llm_request_ms": 9679.5,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 0,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "wrong_tool_arguments",
+          "wrong_tool_arguments"
+        ],
+        "compare_failure_categories": [
+          "incomplete_workflow",
+          "wrong_tool",
+          "wrong_tool",
+          "wrong_tool"
+        ],
+        "change_reasons": [
+          "task_success: pass \u2192 fail",
+          "tool_correctness: 0.67 \u2192 0.00"
+        ]
+      },
+      {
+        "scenario_id": "RE-008",
+        "scenario_name": "",
+        "classification": "regressed",
+        "severity": "medium",
+        "base_task_success": false,
+        "compare_task_success": false,
+        "base_tool_score": 1.0,
+        "compare_tool_score": 1.0,
+        "base_constraint_passed": false,
+        "compare_constraint_passed": false,
+        "base_overall_passed": false,
+        "compare_overall_passed": false,
+        "base_overall_score": 0.5625,
+        "compare_overall_score": 0.6507499999999999,
+        "base_latency": {
+          "end_to_end_ms": 17402.2,
+          "llm_request_ms": 17398.4,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 3,
+          "infrastructure_dominated": false
+        },
+        "compare_latency": {
+          "end_to_end_ms": 22939.7,
+          "llm_request_ms": 22935.8,
+          "retry_delay_ms": 0.0,
+          "tool_latency_ms": 0.0,
+          "retry_count": 2,
+          "infrastructure_dominated": false
+        },
+        "base_failure_categories": [
+          "missed_escalation",
+          "hallucination",
+          "missed_escalation",
+          "constraint_violation"
+        ],
+        "compare_failure_categories": [
+          "missed_escalation",
+          "missed_escalation",
+          "provider_latency"
+        ],
+        "change_reasons": [
+          "latency: pass \u2192 fail"
+        ]
+      }
+    ],
+    "improved": [
+      "RE-001",
+      "RE-004"
+    ],
+    "regressed": [
+      "RE-002",
+      "RE-003",
+      "RE-007",
+      "RE-008"
+    ],
+    "unchanged": [
+      "RE-005",
+      "RE-006"
+    ],
+    "inconclusive": [],
+    "base_vector": {
+      "task_success_rate": 0.375,
+      "tool_correctness_avg": 0.604,
+      "constraint_adherence_rate": 0.75,
+      "p95_latency_ms": 45926.5,
+      "mean_latency_ms": 19237.7,
+      "infrastructure_failures": 0,
+      "total_retry_delay_ms": 0.0,
+      "scenarios_run": 8,
+      "scenarios_passed": 1
+    },
+    "compare_vector": {
+      "task_success_rate": 0.375,
+      "tool_correctness_avg": 0.469,
+      "constraint_adherence_rate": 0.75,
+      "p95_latency_ms": 43570.2,
+      "mean_latency_ms": 17778.6,
+      "infrastructure_failures": 0,
+      "total_retry_delay_ms": 0.0,
+      "scenarios_run": 8,
+      "scenarios_passed": 1
+    },
+    "task_success_delta": 0.0,
+    "tool_correctness_delta": -0.136,
+    "constraint_adherence_delta": 0.062,
+    "latency_delta_ms": -1459.1,
+    "deployment_recommendation": "block_deployment",
+    "deployment_reasons": [
+      "2 CRITICAL/HIGH regression(s): ['RE-003', 'RE-007']"
+    ],
+    "has_regressions": true,
+    "compared_at": "2026-09-15T10:30:32.040487Z"
+  }
+}

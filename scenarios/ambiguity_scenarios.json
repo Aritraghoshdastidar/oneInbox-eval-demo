@@ -1,0 +1,94 @@
+{
+  "scenarios": [
+    {
+      "id": "AMB-001",
+      "name": "Description without property ID (Holdout)",
+      "description": "Customer asks for a 2-bedroom place with a patio without specifying property ID or address.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "I'm looking for a 2-bedroom place with a patio. Do you have anything like that?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "AMB-002",
+      "name": "Vague property description",
+      "description": "Customer describes a modern house with a nice garden vaguely without specifying address or ID.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "Can you tell me more about that modern house you have listed with a nice garden?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "AMB-003",
+      "name": "Multiple possible properties downtown",
+      "description": "Customer asks broadly about apartments downtown without identifying a listing.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "I'm interested in viewing one of your apartments downtown. Which ones are open?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "AMB-004",
+      "name": "Premature viewing request missing property",
+      "description": "Customer tries to book a viewing slot without naming any property or ID.",
+      "category": "ambiguous",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Can I schedule a viewing for this Saturday September 20th at 2pm please?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "AMB-005",
+      "name": "Broad budget and features inquiry",
+      "description": "Customer provides broad criteria without referencing a specific listing.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "Do you have any 3-bedroom family properties under $500k in a quiet neighborhood?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "AMB-006",
+      "name": "Ambiguous referral / partial street name",
+      "description": "Customer mentions a friend's recommendation on Maple Drive without unit or listing ID.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "A friend told me about a nice place for sale on Maple Drive. What are the details on it?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "experiment_id": "dpo_qwen05b_v1",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "training_time_seconds": 114.48,
+  "timestamp": "2026-09-15T04:54:00Z",
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "vram_gb": 6.0,
+  "precision": "torch.bfloat16",
+  "dataset": {
+    "train_file": "data\\preferences\\training_dedup_v2.jsonl",
+    "train_sha256": "5bbfa3b07e945b82c99507e68bdb139b3a7d9e6fee73107c3bca0a86e7edcd9a",
+    "train_pair_count": 15,
+    "train_lesson_fingerprints": [
+      "440fc837edc04fff2363c60c513bc48094f181164c2426d521a044a7c74035df",
+      "cd7871bbe649593448f3ead7751a8bc037d68fcd3e456161baa23684a1da4f8c",
+      "d95737d7b8c13ea152a2f785e35adf990520135efa08e0b330ff750dddebe4bb",
+      "cfc90ce29b9df3223f10ce19ccc02f1aacfa230f714d949c43dbb82bdfcc9806",
+      "83142fa5b0da01702cd625ee4b4eadf2e9e9f5d1821013ff1f868463593eda10",
+      "91a85d44a50a5da8d2862b68607aeefc3c7d08f232a7b605eecbd231221578d7",
+      "e31f4d54ab59f73faa872417c45781a941341fcbea53da541cf777cc9b780ff4",
+      "e2105ca3c88b2628472b142eb8a0fcb5db43ec22e963834498dbeb1e4fe2f61a",
+      "30ceadd403b300e52fbdcecd970eb5eab70ad1742eb3d56d88bb6514e2372e48",
+      "3eb45037ad2a2d940e56f6d7acb355063374a69fc55cc08bab29c7114424bfd1",
+      "d55a6a4f3b075942c1505f6a5c979d0c40fa80fe0717922cb5b5f6726d48c1d8",
+      "ecd3fd561ce049ae960fa16178d5e215c1a869799d6795c42da06c4dad773a66",
+      "a948d913e8f7c4a2b17218b9870759ad18494bdb69845192ac6d3d0f9ff9f6d2",
+      "8dbda7dd9baabf4a02afe72b2f559d69a4ad6281bc20616b011939a8041025e5",
+      "47416a889076a85deec302d4383a5d608895c8f3ff5e3a0174d8a608834804a8"
+    ],
+    "val_file": "data\\preferences\\val_dedup_v2.jsonl",
+    "val_sha256": "48ea0484ec13d45a988d49fabce554e7ea5f27fe8145b4f516a1b921885a6618",
+    "val_pair_count": 7,
+    "val_lesson_fingerprints": [
+      "d97889c26835b5bc6de1b99271fab5bb98d42af3b7732da2819e077445c755c8",
+      "9945bcd3be7c7e96030f2f05ee4b573b51d727d2fa60314b8ca8ba0517bf39d5",
+      "318bf7633023025a4fed87a703dc1c2a62ed6854c83f212edff8fb851df6ed53",
+      "440fc837edc04fff2363c60c513bc48094f181164c2426d521a044a7c74035df",
+      "3576333e4dd3a6d700074c49704bbe02e8edb3e2ecb932ca86b9023ed8382a90",
+      "159caf33f9f7cc1e5177d8ea59a135aa2a0e48531db857a4a111eb39acf3c9c8",
+      "cd7871bbe649593448f3ead7751a8bc037d68fcd3e456161baa23684a1da4f8c"
+    ]
+  },
+  "hyperparameters": {
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "learning_rate": 5e-05,
+    "num_epochs": 3,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 4,
+    "beta": 0.1,
+    "max_length": 1024,
+    "seed": 42
+  },
+  "training_metrics": {
+    "train_runtime": 114.48,
+    "train_samples_per_second": 0.394,
+    "train_steps_per_second": 0.105,
+    "train_loss": 0.4090467703839143,
+    "epoch": 3.0
+  },
+  "eval_metrics": {
+    "eval_loss": 0.383199542760849,
+    "eval_runtime": 3.5325,
+    "eval_samples_per_second": 1.982,
+    "eval_steps_per_second": 1.982,
+    "eval_entropy": 1.1464352863175529,
+    "eval_num_tokens": 81120.0,
+    "eval_logits/chosen": -1.8173183319253625,
+    "eval_logits/rejected": -1.9386033900411666,
+    "eval_mean_token_accuracy": 0.614210171358926,
+    "eval_rewards/chosen": 0.8139084247606141,
+    "eval_rewards/rejected": -0.24704655898468836,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 1.0609549901315145,
+    "eval_logps/chosen": -76.41554341997418,
+    "eval_logps/rejected": -89.29409108843122
+  },
+  "artifact_paths": {
+    "adapter_dir": "experiments\\dpo_qwen05b_v1\\adapter",
+    "tokenizer_dir": "experiments\\dpo_qwen05b_v1\\tokenizer",
+    "metadata_file": "experiments\\dpo_qwen05b_v1\\run_metadata.json",
+    "metrics_file": "experiments\\dpo_qwen05b_v1\\train_metrics.json"
+  }
+}

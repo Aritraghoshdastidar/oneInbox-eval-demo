@@ -1,0 +1,37 @@
+{
+  "version": "v3",
+  "total_pairs": 27,
+  "train_pairs": 23,
+  "val_pairs": 4,
+  "holdout_scenarios": [
+    "RE-004",
+    "AMB-001"
+  ],
+  "train_scenarios": [
+    "AMB-002",
+    "AMB-003",
+    "AMB-004",
+    "AMB-005",
+    "AMB-006",
+    "RE-001",
+    "RE-002",
+    "RE-003",
+    "RE-005",
+    "RE-007",
+    "RE-008"
+  ],
+  "val_scenarios": [
+    "AMB-001",
+    "RE-004"
+  ],
+  "decision_type_distribution": {
+    "no_tool": 15,
+    "required_tool": 6,
+    "tool_order": 2,
+    "tool_args": 2,
+    "escalation": 2
+  },
+  "fingerprint_overlap": 0,
+  "re004_in_train": false,
+  "amb001_in_train": false
+}

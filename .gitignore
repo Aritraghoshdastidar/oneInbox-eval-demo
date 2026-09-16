@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+
+# Environment & Secrets
+.env
+*.env.local
+
+# Database
+data/*.db
+data/*.sqlite3
+
+# Intermediate Experiment Checkpoints (keep V5 final evaluation artifacts)
+experiments/dpo_qwen05b_v1/adapter/*.safetensors
+experiments/dpo_qwen05b_v2/adapter/*.safetensors
+experiments/dpo_qwen05b_v3/adapter/*.safetensors
+experiments/dpo_qwen05b_v4a/adapter/*.safetensors
+experiments/dpo_qwen05b_v4b/adapter/*.safetensors
+experiments/dpo_qwen05b_v1/tokenizer/
+experiments/dpo_qwen05b_v2/tokenizer/
+experiments/dpo_qwen05b_v3/tokenizer/
+experiments/dpo_qwen05b_v4a/tokenizer/
+experiments/dpo_qwen05b_v4b/tokenizer/
+
+# Node & Vercel
+node_modules/
+.vercel
+
+# Scratch & Temporary Logs
+scratch/
+wandb/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

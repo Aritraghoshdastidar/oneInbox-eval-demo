@@ -1,0 +1,209 @@
+{
+  "benchmark": "OneInbox Real-Estate Suite (8 Scenarios)",
+  "experiment": "DPO Experiment V4A: Balanced Trajectory-Aware Preference Learning",
+  "timestamp": "2026-09-15T06:53:35Z",
+  "base_model": {
+    "version": "qwen2.5_0.5b_base_v4a",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": null,
+    "overall_pass_rate": 0.125,
+    "passed_count": 1,
+    "total_count": 8,
+    "conditional_tool_metrics": {
+      "total_decisions": 8,
+      "accuracy": 0.75,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "required_tool_precision": 0.8571,
+      "required_tool_recall": 0.8571,
+      "argument_accuracy": 0.2857,
+      "argument_correct": 4,
+      "argument_total": 14,
+      "order_accuracy": 0.6667,
+      "order_correct": 2,
+      "order_total": 3
+    }
+  },
+  "dpo_model": {
+    "version": "qwen2.5_0.5b_dpo_v4a",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": "experiments/dpo_qwen05b_v4a/adapter",
+    "overall_pass_rate": 0.125,
+    "passed_count": 1,
+    "total_count": 8,
+    "conditional_tool_metrics": {
+      "total_decisions": 8,
+      "accuracy": 1.0,
+      "no_tool_precision": 1.0,
+      "no_tool_recall": 1.0,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 1.0,
+      "argument_accuracy": 0.8,
+      "argument_correct": 12,
+      "argument_total": 15,
+      "order_accuracy": 1.0,
+      "order_correct": 3,
+      "order_total": 3
+    }
+  },
+  "comparison_matrix": [
+    {
+      "scenario_id": "RE-001",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.7575000000000001,
+      "compare_score": 0.75,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 40933.2,
+      "compare_latency_ms": 52158.8,
+      "delta_latency_ms": 11225.600000000006,
+      "reasons": [
+        "tool_correctness: 0.67 \u2192 1.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-002",
+      "scenario_name": "",
+      "base_passed": true,
+      "compare_passed": false,
+      "base_score": 1.0,
+      "compare_score": 0.89625,
+      "classification": "regressed",
+      "severity": "medium",
+      "base_latency_ms": 9156.6,
+      "compare_latency_ms": 28303.7,
+      "delta_latency_ms": 19147.1,
+      "reasons": [
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-003",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.625,
+      "compare_score": 0.8235,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 13469.0,
+      "compare_latency_ms": 47419.8,
+      "delta_latency_ms": 33950.8,
+      "reasons": [
+        "task_success: fail \u2192 pass",
+        "tool_correctness: 0.50 \u2192 0.88",
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-004",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.625,
+      "compare_score": 0.75,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 6794.9,
+      "compare_latency_ms": 3803.8,
+      "delta_latency_ms": -2991.0999999999995,
+      "reasons": [
+        "tool_correctness: 0.50 \u2192 1.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-005",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.6875,
+      "classification": "regressed",
+      "severity": "critical",
+      "base_latency_ms": 3695.8,
+      "compare_latency_ms": 13655.5,
+      "delta_latency_ms": 9959.7,
+      "reasons": [
+        "tool_correctness: 0.00 \u2192 1.00",
+        "constraint_adherence: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-006",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.75,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 12083.3,
+      "compare_latency_ms": 19754.4,
+      "delta_latency_ms": 7671.100000000002,
+      "reasons": [
+        "tool_correctness: 0.50 \u2192 1.00",
+        "constraint_adherence: fail \u2192 pass"
+      ]
+    },
+    {
+      "scenario_id": "RE-007",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.91675,
+      "compare_score": 0.94325,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 16173.6,
+      "compare_latency_ms": 36810.0,
+      "delta_latency_ms": 20636.4,
+      "reasons": [
+        "tool_correctness: 0.67 \u2192 1.00",
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-008",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": true,
+      "base_score": 0.5625,
+      "compare_score": 1.0,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 15336.8,
+      "compare_latency_ms": 16623.8,
+      "delta_latency_ms": 1287.0,
+      "reasons": [
+        "task_success: fail \u2192 pass",
+        "constraint_adherence: fail \u2192 pass"
+      ]
+    }
+  ],
+  "regression_summary": {
+    "regressions_count": 2,
+    "improvements_count": 6,
+    "neutral_count": 0,
+    "inconclusive_count": 0,
+    "deployment_recommendation": "block_deployment",
+    "deployment_reasons": [
+      "1 CRITICAL/HIGH regression(s): ['RE-005']"
+    ]
+  },
+  "re004_analysis": {
+    "base_passed": false,
+    "dpo_passed": false,
+    "base_tools_called": [
+      "property_lookup"
+    ],
+    "dpo_tools_called": []
+  },
+  "amb001_holdout_analysis": {
+    "base_passed": true,
+    "dpo_passed": true,
+    "base_tools_called": [],
+    "dpo_tools_called": []
+  }
+}

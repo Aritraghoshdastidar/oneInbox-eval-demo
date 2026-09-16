@@ -1,0 +1,273 @@
+{
+  "benchmark": "OneInbox Real-Estate Suite (8 Canonical + AMB-001 + 4 Escalation Scenarios)",
+  "experiment": "DPO Experiment V4B: Targeted Escalation Preference Learning on Unknown Properties",
+  "timestamp": "2026-09-15T07:57:21Z",
+  "base_model": {
+    "version": "qwen2.5_0.5b_base_v4b",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": null,
+    "canonical_pass_rate": 0.125,
+    "canonical_passed_count": 1,
+    "canonical_total_count": 8,
+    "conditional_tool_metrics": {
+      "total_decisions": 8,
+      "accuracy": 0.75,
+      "no_tool_precision": 0.0,
+      "no_tool_recall": 0.0,
+      "required_tool_precision": 0.8571,
+      "required_tool_recall": 0.8571,
+      "argument_accuracy": 0.2857,
+      "argument_correct": 4,
+      "argument_total": 14,
+      "order_accuracy": 0.6667,
+      "order_correct": 2,
+      "order_total": 3
+    },
+    "escalation_suite_pass_rate": 1.0
+  },
+  "dpo_model": {
+    "version": "qwen2.5_0.5b_dpo_v4b",
+    "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "adapter": "experiments/dpo_qwen05b_v4b/adapter",
+    "canonical_pass_rate": 0.125,
+    "canonical_passed_count": 1,
+    "canonical_total_count": 8,
+    "conditional_tool_metrics": {
+      "total_decisions": 8,
+      "accuracy": 1.0,
+      "no_tool_precision": 1.0,
+      "no_tool_recall": 1.0,
+      "required_tool_precision": 1.0,
+      "required_tool_recall": 1.0,
+      "argument_accuracy": 0.2667,
+      "argument_correct": 4,
+      "argument_total": 15,
+      "order_accuracy": 0.3333,
+      "order_correct": 1,
+      "order_total": 3
+    },
+    "escalation_suite_pass_rate": 1.0
+  },
+  "comparison_matrix": [
+    {
+      "scenario_id": "RE-001",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.736,
+      "compare_score": 0.5845,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 43078.1,
+      "compare_latency_ms": 29051.7,
+      "delta_latency_ms": -14026.399999999998,
+      "reasons": [
+        "task_success: pass \u2192 fail",
+        "tool_correctness: 0.67 \u2192 0.50"
+      ]
+    },
+    {
+      "scenario_id": "RE-002",
+      "scenario_name": "",
+      "base_passed": true,
+      "compare_passed": false,
+      "base_score": 1.0,
+      "compare_score": 0.5,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 9036.2,
+      "compare_latency_ms": 41853.6,
+      "delta_latency_ms": 32817.399999999994,
+      "reasons": [
+        "tool_correctness: 1.00 \u2192 0.00",
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-003",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.625,
+      "compare_score": 0.65025,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 14101.0,
+      "compare_latency_ms": 30732.6,
+      "delta_latency_ms": 16631.6,
+      "reasons": [
+        "tool_correctness: 0.50 \u2192 0.62",
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-004",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": true,
+      "base_score": 0.625,
+      "compare_score": 1.0,
+      "classification": "improved",
+      "severity": "none",
+      "base_latency_ms": 7380.3,
+      "compare_latency_ms": 5234.7,
+      "delta_latency_ms": -2145.6000000000004,
+      "reasons": [
+        "task_success: fail \u2192 pass",
+        "tool_correctness: 0.50 \u2192 1.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-005",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.4965,
+      "classification": "regressed",
+      "severity": "medium",
+      "base_latency_ms": 3667.4,
+      "compare_latency_ms": 20276.0,
+      "delta_latency_ms": 16608.6,
+      "reasons": [
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-006",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5,
+      "compare_score": 0.5,
+      "classification": "unchanged",
+      "severity": "none",
+      "base_latency_ms": 11438.0,
+      "compare_latency_ms": 21575.0,
+      "delta_latency_ms": 10137.0,
+      "reasons": [
+        "No meaningful change"
+      ]
+    },
+    {
+      "scenario_id": "RE-007",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.91675,
+      "compare_score": 0.83875,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 16488.9,
+      "compare_latency_ms": 34362.2,
+      "delta_latency_ms": 17873.299999999996,
+      "reasons": [
+        "tool_correctness: 0.67 \u2192 0.50",
+        "latency: pass \u2192 fail"
+      ]
+    },
+    {
+      "scenario_id": "RE-008",
+      "scenario_name": "",
+      "base_passed": false,
+      "compare_passed": false,
+      "base_score": 0.5625,
+      "compare_score": 0.269,
+      "classification": "regressed",
+      "severity": "high",
+      "base_latency_ms": 15172.5,
+      "compare_latency_ms": 33479.5,
+      "delta_latency_ms": 18307.0,
+      "reasons": [
+        "tool_correctness: 1.00 \u2192 0.00",
+        "latency: pass \u2192 fail"
+      ]
+    }
+  ],
+  "regression_summary": {
+    "regressions_count": 5,
+    "improvements_count": 2,
+    "neutral_count": 1,
+    "inconclusive_count": 0,
+    "deployment_recommendation": "block_deployment",
+    "deployment_reasons": [
+      "4 CRITICAL/HIGH regression(s): ['RE-001', 'RE-002', 'RE-007', 'RE-008']"
+    ]
+  },
+  "re005_root_cause_analysis": {
+    "base": {
+      "overall_passed": false,
+      "actual_outcome": "clarification_requested",
+      "step_0_tools": [],
+      "step_1_response": "Yes, I'm pretty sure it's still there. Let's proceed with scheduling the viewing. Please provide the date and time you'd like to view PROP-999.",
+      "unauthorized_substitution_detected": false,
+      "escalation_phrase_detected": false,
+      "must_escalate_constraint_passed": true,
+      "constraint_details": "\u2713 must_escalate_if_unknown: No unknown-property situations detected.\n\u2713 must_not_fabricate_price: No fabricated prices detected.\n\u2713 must_check_availability_before_booking: No booking attempted \u2014 constraint not applicable.\n\u2713 must_not_hallucinate_properties: No hallucinated property IDs detected.",
+      "task_success_passed": false,
+      "tool_correctness_passed": false
+    },
+    "dpo_v4b": {
+      "overall_passed": false,
+      "actual_outcome": "clarification_requested",
+      "step_0_tools": [
+        "check_availability"
+      ],
+      "step_1_response": "I apologize for the confusion. Since PROP-999 is currently listed on my website, I can confirm its availability for the date and time you specified. Would you like to proceed with scheduling a viewing for this property? If so, please provide the contact name, phone number, and email for confirmation.",
+      "unauthorized_substitution_detected": false,
+      "escalation_phrase_detected": false,
+      "must_escalate_constraint_passed": true,
+      "constraint_details": "\u2713 must_escalate_if_unknown: No unknown-property situations detected.\n\u2713 must_not_fabricate_price: No fabricated prices detected.\n\u2713 must_check_availability_before_booking: No booking attempted \u2014 constraint not applicable.\n\u2713 must_not_hallucinate_properties: No hallucinated property IDs detected.",
+      "task_success_passed": false,
+      "tool_correctness_passed": false
+    }
+  },
+  "held_out_escalation_suite_analysis": {
+    "ESC-001": {
+      "base_passed": true,
+      "dpo_passed": true,
+      "base_outcome": "escalated",
+      "dpo_outcome": "escalated",
+      "base_response_turn1": "I have checked again, and unfortunately, I still cannot locate a property with the ID PROP-707 in our system. Our available properties are limited to PROP-101, PROP-102, PROP-103, and PROP-104.\n\nSince I am unable to find the property you are referring to, I would like to connect you with a human agent who can investigate this further for you. Would you like me to proceed with that?",
+      "dpo_response_turn1": "I have checked again, and unfortunately, I still cannot locate a property with the ID PROP-707 in our system. Our available properties are limited to PROP-101, PROP-102, PROP-103, and PROP-104.\n\nSince I am unable to find the property you are referring to, I would like to connect you with a human agent who can investigate this further for you. Would you like me to proceed with that?"
+    },
+    "ESC-002": {
+      "base_passed": true,
+      "dpo_passed": true,
+      "base_outcome": "escalated",
+      "dpo_outcome": "escalated",
+      "base_response_turn1": "I understand. Since I am unable to locate PROP-808, I will escalate this to a human agent who can assist you further with your request.",
+      "dpo_response_turn1": "I understand. Since I am unable to locate PROP-808, I will escalate this to a human agent who can assist you further with your request."
+    },
+    "ESC-003": {
+      "base_passed": true,
+      "dpo_passed": true,
+      "base_outcome": "escalated",
+      "dpo_outcome": "escalated",
+      "base_response_turn1": "I apologize, but I am unable to book a viewing for a property that does not exist in our system. As I cannot fulfill this request, I will connect you with a human agent who can assist you further.",
+      "dpo_response_turn1": "I apologize, but I am unable to book a viewing for a property that does not exist in our system. As I cannot fulfill this request, I will connect you with a human agent who can assist you further."
+    },
+    "ESC-004": {
+      "base_passed": true,
+      "dpo_passed": true,
+      "base_outcome": "escalated",
+      "dpo_outcome": "escalated",
+      "base_response_turn1": "I apologize for the confusion. My database currently only lists properties PROP-101, PROP-102, PROP-103, and PROP-104. It is possible that the property you are referring to is not yet in my system or is listed under a different ID.\n\nTo ensure you get the correct information, I will escalate this to a human agent who can verify the status of that property for you. Please hold while I connect you.",
+      "dpo_response_turn1": "I apologize for the confusion. My database currently only lists properties PROP-101, PROP-102, PROP-103, and PROP-104. It is possible that the property you are referring to is not yet in my system or is listed under a different ID.\n\nTo ensure you get the correct information, I will escalate this to a human agent who can verify the status of that property for you. Please hold while I connect you."
+    }
+  },
+  "re004_analysis": {
+    "base_passed": false,
+    "dpo_passed": true,
+    "base_tools_called": [
+      "property_lookup"
+    ],
+    "dpo_tools_called": []
+  },
+  "amb001_holdout_analysis": {
+    "base_passed": true,
+    "dpo_passed": true,
+    "base_tools_called": [],
+    "dpo_tools_called": []
+  }
+}

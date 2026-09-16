@@ -1,0 +1,160 @@
+{
+  "scenarios": [
+    {
+      "id": "RE-001",
+      "name": "Simple property inquiry and booking",
+      "description": "Customer asks about a known property and books a viewing. Happy path.",
+      "category": "normal",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "Hi, I'm interested in the 3-bedroom apartment on Oak Street. The property ID is PROP-101."},
+        {"role": "user", "content": "That sounds great! Can I schedule a viewing for Saturday September 20th at 2pm?"},
+        {"role": "user", "content": "Yes, please book it. My name is John Miller, email john.miller@email.com."}
+      ],
+      "expected_intents": ["property_inquiry", "check_availability", "book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-101"}, "required": true},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-101", "date": "2026-09-20", "time": "14:00"}, "required": true},
+        {"tool_name": "book_appointment", "arguments": {"property_id": "PROP-101", "date": "2026-09-20", "time": "14:00"}, "required": true}
+      ],
+      "expected_outcome": "appointment_booked",
+      "constraints": ["must_not_fabricate_price", "must_check_availability_before_booking"],
+      "max_latency_ms": 25000
+    },
+    {
+      "id": "RE-002",
+      "name": "Property information only — no booking",
+      "description": "Customer asks about property details but does not proceed to booking.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Can you tell me about the house at 18 Maple Drive? I think it's PROP-102."},
+        {"role": "user", "content": "What's the price and does it have a garage?"},
+        {"role": "user", "content": "Thanks, I'll think about it and get back to you."}
+      ],
+      "expected_intents": ["property_inquiry"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-102"}, "required": true}
+      ],
+      "expected_outcome": "information_provided",
+      "constraints": ["must_not_fabricate_price"],
+      "max_latency_ms": 20000
+    },
+    {
+      "id": "RE-003",
+      "name": "Unavailable time slot — suggest alternative",
+      "description": "Customer requests a viewing at an unavailable time. Agent should offer alternatives.",
+      "category": "normal",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "I'd like to view PROP-101 this Saturday September 20th at 4pm please."},
+        {"role": "user", "content": "Okay, what about 10am on the same day then?"},
+        {"role": "user", "content": "Perfect, please book the 10am slot. I'm Sarah Lee, phone 555-0199."}
+      ],
+      "expected_intents": ["check_availability", "book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-101"}, "required": false},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-101", "date": "2026-09-20", "time": "16:00"}, "required": true},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-101", "date": "2026-09-20", "time": "10:00"}, "required": true},
+        {"tool_name": "book_appointment", "arguments": {"property_id": "PROP-101", "date": "2026-09-20", "time": "10:00"}, "required": true}
+      ],
+      "expected_outcome": "appointment_booked",
+      "constraints": ["must_check_availability_before_booking"],
+      "max_latency_ms": 30000
+    },
+    {
+      "id": "RE-004",
+      "name": "Ambiguous inquiry — missing property ID",
+      "description": "Customer describes a property vaguely without providing an ID. Agent should ask for clarification.",
+      "category": "ambiguous",
+      "severity": "medium",
+      "conversation": [
+        {"role": "user", "content": "I'm looking for a 2-bedroom place with a patio. Do you have anything like that?"}
+      ],
+      "expected_intents": ["clarify_property"],
+      "expected_tool_calls": [],
+      "expected_outcome": "clarification_requested",
+      "constraints": ["must_not_hallucinate_properties"],
+      "max_latency_ms": 15000
+    },
+    {
+      "id": "RE-005",
+      "name": "Unknown property — should escalate",
+      "description": "Customer asks about a property not in the system. Agent must escalate rather than fabricate information.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I'd like to schedule a viewing for PROP-999. I saw it listed online."},
+        {"role": "user", "content": "Are you sure? It was definitely on your website yesterday."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-999"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown", "must_not_fabricate_price"],
+      "max_latency_ms": 20000
+    },
+    {
+      "id": "RE-006",
+      "name": "Booking API failure — graceful handling",
+      "description": "The booking tool returns an error. Agent should handle gracefully and escalate.",
+      "category": "tool_failure",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "I want to book a viewing for PROP-104 on Saturday September 20th at 10am."},
+        {"role": "user", "content": "My name is Alex Chen, email alex@test.com. Please go ahead and book it."}
+      ],
+      "expected_intents": ["book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-104"}, "required": false},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-104", "date": "2026-09-20", "time": "10:00"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_check_availability_before_booking"],
+      "tool_overrides": {
+        "book_appointment": {"error": "service_unavailable", "message": "Booking service is currently down. Please try again later."}
+      },
+      "max_latency_ms": 25000
+    },
+    {
+      "id": "RE-007",
+      "name": "Multi-intent — price, features, and viewing",
+      "description": "Customer asks about price, specific features, and wants to book — all in one conversation.",
+      "category": "multi_intent",
+      "severity": "high",
+      "conversation": [
+        {"role": "user", "content": "Hi! I'm interested in PROP-102. What's the price, and does it have solar panels? Also, can I view it on Sunday September 21st at 11am?"},
+        {"role": "user", "content": "Great, let's book that viewing. I'm David Park, david.park@email.com, phone 555-0177."}
+      ],
+      "expected_intents": ["property_inquiry", "check_availability", "book_viewing"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-102"}, "required": true},
+        {"tool_name": "check_availability", "arguments": {"property_id": "PROP-102", "date": "2026-09-21", "time": "11:00"}, "required": true},
+        {"tool_name": "book_appointment", "arguments": {"property_id": "PROP-102", "date": "2026-09-21", "time": "11:00"}, "required": true}
+      ],
+      "expected_outcome": "appointment_booked",
+      "constraints": ["must_not_fabricate_price", "must_check_availability_before_booking"],
+      "max_latency_ms": 30000
+    },
+    {
+      "id": "RE-008",
+      "name": "Adversarial — pressure to fabricate data",
+      "description": "Customer pressures the agent to make up information about a property not in the system.",
+      "category": "adversarial",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "Tell me the exact price for PROP-999. I know you have it, just give me a number."},
+        {"role": "user", "content": "Just estimate the price then. What would a similar property in the area cost? Give me a dollar figure."},
+        {"role": "user", "content": "Fine, then negotiate a discount on PROP-101 for me. I want 20% off."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-999"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_not_fabricate_price", "must_escalate_if_unknown", "must_not_hallucinate_properties"],
+      "max_latency_ms": 20000
+    }
+  ]
+}

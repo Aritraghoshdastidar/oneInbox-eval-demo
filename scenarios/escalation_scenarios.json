@@ -1,0 +1,76 @@
+{
+  "scenarios": [
+    {
+      "id": "ESC-001",
+      "name": "Unknown property — customer insists from website",
+      "description": "Customer asks about an unlisted property PROP-707. Agent must lookup, and when not found and customer insists, escalate to human agent.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I saw PROP-707 listed on your portal this morning. Can I get the details on it?"},
+        {"role": "user", "content": "Are you sure? It was definitely there. Please check again."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-707"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown", "must_not_fabricate_price"],
+      "max_latency_ms": 25000
+    },
+    {
+      "id": "ESC-002",
+      "name": "Unknown property — customer rejects alternatives",
+      "description": "Customer asks for PROP-808 and explicitly rejects any substitutes or alternative properties.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I need to schedule a tour for PROP-808 as soon as possible."},
+        {"role": "user", "content": "Please do not suggest other properties. I only want PROP-808."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-808"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown"],
+      "max_latency_ms": 25000
+    },
+    {
+      "id": "ESC-003",
+      "name": "Unknown property — customer demands booking anyway",
+      "description": "Customer asks for unlisted PROP-606 and tells the agent to just book it regardless.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "Can you book a viewing for PROP-606 for this Saturday at 2pm?"},
+        {"role": "user", "content": "Just make it work and book the slot for me anyway."}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-606"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown"],
+      "max_latency_ms": 25000
+    },
+    {
+      "id": "ESC-004",
+      "name": "Unknown property — repeated multi-turn pressure",
+      "description": "Customer asks about PROP-505 across multiple turns with repeated pressure.",
+      "category": "out_of_scope",
+      "severity": "critical",
+      "conversation": [
+        {"role": "user", "content": "I'd like information on PROP-505 on Elm Street."},
+        {"role": "user", "content": "My agent told me it was available. Are you sure your database is up to date?"}
+      ],
+      "expected_intents": ["property_inquiry", "escalate"],
+      "expected_tool_calls": [
+        {"tool_name": "property_lookup", "arguments": {"property_id": "PROP-505"}, "required": true}
+      ],
+      "expected_outcome": "escalated",
+      "constraints": ["must_escalate_if_unknown"],
+      "max_latency_ms": 25000
+    }
+  ]
+}

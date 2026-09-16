@@ -1,0 +1,117 @@
+{
+  "experiment_id": "dpo_qwen05b_v3",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "training_time_seconds": 734.6,
+  "timestamp": "2026-09-15T06:08:21Z",
+  "device": "cuda",
+  "precision": "torch.bfloat16",
+  "dataset": {
+    "train_file": "data\\preferences\\dpo_train_formatted_v3.jsonl",
+    "train_sha256": "37e739ae9459ee0ad61ebf916af6fc9dbaa600d9e886910c300429eb05769ab9",
+    "train_pair_count": 23,
+    "train_scenarios": [
+      "AMB-002",
+      "AMB-003",
+      "AMB-004",
+      "AMB-005",
+      "AMB-006",
+      "RE-001",
+      "RE-002",
+      "RE-003",
+      "RE-005",
+      "RE-007",
+      "RE-008"
+    ],
+    "train_lesson_fingerprints": [
+      "47d9b0753768d1a978606124dbb773aa1272ef828e71681d1d33e82c03914de5",
+      "6a154be9f166b8a4df5b10aec1c2a1595261cee05e7047edfd83778587388a54",
+      "e47384f8059101291a40e79520765c290f03779c0004e992c067d5b726c1cdb2",
+      "eb851c9296f6028dd98730aa6bb136d35d64989e298be4ac51dd959a79d709e4",
+      "3683323b7af749aa406941fc9692602b482bdce5922c1e3caa54ef9f8f647275",
+      "6794f84d76b8aaa3edda31d290625143a7d52a77512c03e0cfd0c9497ad3aca7",
+      "b4e2e9a175658ced810fd286de4154f47c44bb8f65ad5d64b20b7a998b8febd0",
+      "ee18999a253354c26bcda946766e26efe4afc1b4233ff187cf7f3936637adddd",
+      "87c726bdd4b6a74e394029dfead90a9b25f7e817f0809284f938a43c5e2c26c2",
+      "c1731c77f97080989f36afac2d96244e2a01ae5a15b4af3ba517edcc544764ff",
+      "93419cd15a5a2c7c7f03fca681674d244e251a5abd717cf743b6751a5575ea55",
+      "6afa73845ccc4b480243fb82db533771dfbdb283584554429ebc5b98903f1439",
+      "b47cff33e3f6ef97501db91248c0de001944072050ebfb9baf61a8eef13845cb",
+      "e4dd3496b49a95feed6e46c2a41de68dc18a1c0b3b6859423123b60885091b15",
+      "a555336868877b8de1e6c2eebc7da67ac78239527272146498b7780ed61ce9d4",
+      "0e7d8d87a9127d8ada50c6a91e187294391abde3d2b5ee813f3c413c583a5343",
+      "dcaf2ad352e80078e38d881ee3ce65eacf724e58b46275b58fe6f0215e2c6e47",
+      "17868c8971822e77074706a4800fef71c995641c113f87c6ea18459565ce2ce6",
+      "4f221526f3d45c3c8a66e3e2117c7ff38017f954388ad8fd8884374ab0d7f421",
+      "6ea5436f1df27404d124bd6bc532708e834cc438651cfddbb842e5ca71e8180a",
+      "d91fc0277ebcea49d50f717d50d49e4b9094762d7066e0d2feb28e44eb2827ee",
+      "47ae33cd28a67142d000ce057bff5460e01fa7c4acfe47dd40788849e551082f",
+      "c19def641a4fa7f4aa32f05fcbc93631b6b22a0416bf3a2e00e01cbba4571495"
+    ],
+    "val_file": "data\\preferences\\dpo_val_formatted_v3.jsonl",
+    "val_sha256": "b2302989b27f51c620563576116b52b9d5048fe08bb43c90c7bdfc2f276f46cd",
+    "val_pair_count": 4,
+    "val_scenarios": [
+      "AMB-001",
+      "RE-004"
+    ],
+    "val_lesson_fingerprints": [
+      "06677de10c4b94e82b42d3d08c950875eb1e3229f625706f4f915551f0d29d6c",
+      "cac60fe070757eb07dfaea24fbcd5cca314822ffec9110976d168c05dad2accc",
+      "05ae4510d78418026a2ef01a941f2b051e3d0cbac2ca9ac27cff8ef158b62f65",
+      "f1223e5095f8739b21024cefe5c5c6bd7d2ba94a9fbbd57fce25012e242b8602"
+    ],
+    "holdout_verified": true
+  },
+  "hyperparameters": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "k_proj",
+      "q_proj",
+      "down_proj",
+      "o_proj",
+      "up_proj",
+      "v_proj",
+      "gate_proj"
+    ],
+    "learning_rate": 5e-05,
+    "num_epochs": 3,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 4,
+    "beta": 0.1,
+    "max_length": 2048,
+    "seed": 42
+  },
+  "training_metrics": {
+    "train_runtime": 734.6,
+    "train_samples_per_second": 0.094,
+    "train_steps_per_second": 0.025,
+    "total_flos": 365075522265600.0,
+    "train_loss": 0.3219451637317737,
+    "epoch": 3.0
+  },
+  "eval_metrics": {
+    "eval_loss": 0.08066937327384949,
+    "eval_runtime": 4.6209,
+    "eval_samples_per_second": 0.866,
+    "eval_steps_per_second": 0.866,
+    "eval_entropy": 0.5547280609607697,
+    "eval_num_tokens": 165180.0,
+    "eval_logits/chosen": -2.7132678031921387,
+    "eval_logits/rejected": -1.43371337890625,
+    "eval_mean_token_accuracy": 0.71875,
+    "eval_rewards/chosen": 1.7109348773956299,
+    "eval_rewards/rejected": -0.7666262984275818,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 2.4775612354278564,
+    "eval_logps/chosen": -21.475055694580078,
+    "eval_logps/rejected": -10.449366569519043,
+    "epoch": 3.0
+  },
+  "artifact_paths": {
+    "adapter_dir": "experiments\\dpo_qwen05b_v3\\adapter",
+    "tokenizer_dir": "experiments\\dpo_qwen05b_v3\\tokenizer"
+  }
+}

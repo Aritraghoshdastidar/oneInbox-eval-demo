@@ -1,0 +1,411 @@
+{
+  "base_version": "qwen2.5_0.5b_base_v5",
+  "compare_version": "qwen2.5_0.5b_dpo_v5",
+  "total_scenarios": 8,
+  "scenario_comparisons": [
+    {
+      "scenario_id": "RE-001",
+      "scenario_name": "",
+      "classification": "improved",
+      "severity": null,
+      "base_task_success": true,
+      "compare_task_success": true,
+      "base_tool_score": 0.667,
+      "compare_tool_score": 0.0,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": true,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.724,
+      "compare_overall_score": 0.75,
+      "base_latency": {
+        "end_to_end_ms": 44277.8,
+        "llm_request_ms": 24001.4,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 3,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 18679.5,
+        "llm_request_ms": 13932.4,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "wrong_tool_arguments",
+        "wrong_tool_arguments",
+        "provider_latency"
+      ],
+      "compare_failure_categories": [
+        "wrong_tool",
+        "wrong_tool",
+        "wrong_tool"
+      ],
+      "change_reasons": [
+        "latency: fail \u2192 pass",
+        "tool_correctness: 0.67 \u2192 0.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-002",
+      "scenario_name": "",
+      "classification": "inconclusive",
+      "severity": null,
+      "base_task_success": true,
+      "compare_task_success": false,
+      "base_tool_score": 1.0,
+      "compare_tool_score": 0.0,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": false,
+      "base_overall_passed": true,
+      "compare_overall_passed": false,
+      "base_overall_score": 1.0,
+      "compare_overall_score": 0.0,
+      "base_latency": {
+        "end_to_end_ms": 10414.2,
+        "llm_request_ms": 10411.4,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 1,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 0.0,
+        "llm_request_ms": 0.0,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [],
+      "compare_failure_categories": [
+        "run_error"
+      ],
+      "change_reasons": [
+        "Infrastructure failure in compare version(s) \u2014 comparison unreliable"
+      ]
+    },
+    {
+      "scenario_id": "RE-003",
+      "scenario_name": "",
+      "classification": "regressed",
+      "severity": "high",
+      "base_task_success": false,
+      "compare_task_success": false,
+      "base_tool_score": 0.5,
+      "compare_tool_score": 0.25,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": true,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.625,
+      "compare_overall_score": 0.5625,
+      "base_latency": {
+        "end_to_end_ms": 14451.1,
+        "llm_request_ms": 14448.0,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 2,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 6609.0,
+        "llm_request_ms": 6607.3,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "incomplete_workflow",
+        "wrong_tool",
+        "wrong_tool_arguments",
+        "wrong_tool_arguments",
+        "wrong_tool"
+      ],
+      "compare_failure_categories": [
+        "incomplete_workflow",
+        "wrong_tool",
+        "wrong_tool",
+        "wrong_tool",
+        "wrong_tool"
+      ],
+      "change_reasons": [
+        "tool_correctness: 0.50 \u2192 0.25"
+      ]
+    },
+    {
+      "scenario_id": "RE-004",
+      "scenario_name": "",
+      "classification": "improved",
+      "severity": null,
+      "base_task_success": false,
+      "compare_task_success": true,
+      "base_tool_score": 0.5,
+      "compare_tool_score": 1.0,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": true,
+      "base_overall_passed": false,
+      "compare_overall_passed": true,
+      "base_overall_score": 0.625,
+      "compare_overall_score": 1.0,
+      "base_latency": {
+        "end_to_end_ms": 7084.9,
+        "llm_request_ms": 7083.8,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 1,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 3672.1,
+        "llm_request_ms": 3671.6,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "incomplete_workflow"
+      ],
+      "compare_failure_categories": [],
+      "change_reasons": [
+        "task_success: fail \u2192 pass",
+        "tool_correctness: 0.50 \u2192 1.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-005",
+      "scenario_name": "",
+      "classification": "unchanged",
+      "severity": null,
+      "base_task_success": false,
+      "compare_task_success": false,
+      "base_tool_score": 0.0,
+      "compare_tool_score": 0.0,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": true,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.5,
+      "compare_overall_score": 0.5,
+      "base_latency": {
+        "end_to_end_ms": 3848.6,
+        "llm_request_ms": 3847.2,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 8281.7,
+        "llm_request_ms": 8280.0,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "missed_escalation",
+        "wrong_tool"
+      ],
+      "compare_failure_categories": [
+        "incomplete_workflow",
+        "wrong_tool"
+      ],
+      "change_reasons": [
+        "No meaningful change"
+      ]
+    },
+    {
+      "scenario_id": "RE-006",
+      "scenario_name": "",
+      "classification": "unchanged",
+      "severity": null,
+      "base_task_success": false,
+      "compare_task_success": false,
+      "base_tool_score": 0.5,
+      "compare_tool_score": 0.5,
+      "base_constraint_passed": false,
+      "compare_constraint_passed": false,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.5,
+      "compare_overall_score": 0.5,
+      "base_latency": {
+        "end_to_end_ms": 12952.0,
+        "llm_request_ms": 12949.4,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 2,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 19070.2,
+        "llm_request_ms": 19067.8,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 1,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "missed_escalation",
+        "wrong_tool",
+        "wrong_tool",
+        "constraint_violation"
+      ],
+      "compare_failure_categories": [
+        "missed_escalation",
+        "wrong_tool",
+        "wrong_tool",
+        "constraint_violation"
+      ],
+      "change_reasons": [
+        "No meaningful change"
+      ]
+    },
+    {
+      "scenario_id": "RE-007",
+      "scenario_name": "",
+      "classification": "regressed",
+      "severity": "high",
+      "base_task_success": true,
+      "compare_task_success": false,
+      "base_tool_score": 0.667,
+      "compare_tool_score": 0.0,
+      "base_constraint_passed": true,
+      "compare_constraint_passed": true,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.91675,
+      "compare_overall_score": 0.5,
+      "base_latency": {
+        "end_to_end_ms": 18257.7,
+        "llm_request_ms": 18254.6,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 2,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 7970.0,
+        "llm_request_ms": 7968.4,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 0,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "wrong_tool_arguments",
+        "wrong_tool_arguments"
+      ],
+      "compare_failure_categories": [
+        "incomplete_workflow",
+        "wrong_tool",
+        "wrong_tool",
+        "wrong_tool"
+      ],
+      "change_reasons": [
+        "task_success: pass \u2192 fail",
+        "tool_correctness: 0.67 \u2192 0.00"
+      ]
+    },
+    {
+      "scenario_id": "RE-008",
+      "scenario_name": "",
+      "classification": "regressed",
+      "severity": "medium",
+      "base_task_success": false,
+      "compare_task_success": false,
+      "base_tool_score": 1.0,
+      "compare_tool_score": 1.0,
+      "base_constraint_passed": false,
+      "compare_constraint_passed": false,
+      "base_overall_passed": false,
+      "compare_overall_passed": false,
+      "base_overall_score": 0.5625,
+      "compare_overall_score": 0.62775,
+      "base_latency": {
+        "end_to_end_ms": 18281.0,
+        "llm_request_ms": 18277.0,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 3,
+        "infrastructure_dominated": false
+      },
+      "compare_latency": {
+        "end_to_end_ms": 24772.9,
+        "llm_request_ms": 24769.9,
+        "retry_delay_ms": 0.0,
+        "tool_latency_ms": 0.0,
+        "retry_count": 2,
+        "infrastructure_dominated": false
+      },
+      "base_failure_categories": [
+        "missed_escalation",
+        "hallucination",
+        "missed_escalation",
+        "constraint_violation"
+      ],
+      "compare_failure_categories": [
+        "missed_escalation",
+        "missed_escalation",
+        "provider_latency"
+      ],
+      "change_reasons": [
+        "latency: pass \u2192 fail"
+      ]
+    }
+  ],
+  "improved": [
+    "RE-001",
+    "RE-004"
+  ],
+  "regressed": [
+    "RE-003",
+    "RE-007",
+    "RE-008"
+  ],
+  "unchanged": [
+    "RE-005",
+    "RE-006"
+  ],
+  "inconclusive": [
+    "RE-002"
+  ],
+  "base_vector": {
+    "task_success_rate": 0.375,
+    "tool_correctness_avg": 0.604,
+    "constraint_adherence_rate": 0.75,
+    "p95_latency_ms": 44277.8,
+    "mean_latency_ms": 16195.9,
+    "infrastructure_failures": 0,
+    "total_retry_delay_ms": 0.0,
+    "scenarios_run": 8,
+    "scenarios_passed": 1
+  },
+  "compare_vector": {
+    "task_success_rate": 0.25,
+    "tool_correctness_avg": 0.344,
+    "constraint_adherence_rate": 0.625,
+    "p95_latency_ms": 24772.9,
+    "mean_latency_ms": 11131.9,
+    "infrastructure_failures": 1,
+    "total_retry_delay_ms": 0.0,
+    "scenarios_run": 8,
+    "scenarios_passed": 1
+  },
+  "task_success_delta": -0.125,
+  "tool_correctness_delta": -0.261,
+  "constraint_adherence_delta": -0.062,
+  "latency_delta_ms": -5064.0,
+  "deployment_recommendation": "block_deployment",
+  "deployment_reasons": [
+    "2 CRITICAL/HIGH regression(s): ['RE-003', 'RE-007']"
+  ],
+  "has_regressions": true,
+  "compared_at": "2026-09-15 09:10:34.070749+00:00"
+}

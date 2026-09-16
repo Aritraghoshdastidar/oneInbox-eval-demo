@@ -1,0 +1,642 @@
+{
+  "timestamp": "2026-09-15T04:22:21.987222+00:00",
+  "variants_executed": [
+    "v1.2_premature_action",
+    "v1.3_wrong_tool",
+    "v1.4_missed_escalation",
+    "v1.5_multi_intent",
+    "v1.6_constraint_violation"
+  ],
+  "summary": {
+    "v1.2_premature_action": {
+      "agent_version": "v1.2_premature_action",
+      "total_scenarios": 8,
+      "passed": 4,
+      "failed": 4,
+      "pass_rate": 0.5,
+      "average_score": 0.861,
+      "total_failures": 14,
+      "results": [
+        {
+          "run_id": "edf46c42-5fef-4d5f-8ff4-f41f9ff70460",
+          "scenario_id": "RE-001",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": false,
+          "overall_score": 0.8335,
+          "task_success": true,
+          "tool_correctness": 0.667,
+          "constraint_adherence": false,
+          "latency_ms": 7759.665799996583,
+          "failure_count": 2,
+          "failure_categories": [
+            "wrong_tool",
+            "constraint_violation"
+          ]
+        },
+        {
+          "run_id": "9a7eca4e-796a-4b46-ba49-c2a6b6dd3bab",
+          "scenario_id": "RE-002",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 3784.6458999993047,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "e255d804-33b1-4bff-8231-c1e09266dc40",
+          "scenario_id": "RE-003",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": false,
+          "overall_score": 0.46875,
+          "task_success": true,
+          "tool_correctness": 0.375,
+          "constraint_adherence": false,
+          "latency_ms": 71876.28579999728,
+          "failure_count": 7,
+          "failure_categories": [
+            "wrong_tool",
+            "wrong_tool",
+            "wrong_tool",
+            "wrong_tool_arguments",
+            "constraint_violation",
+            "provider_latency",
+            "tool_failure"
+          ]
+        },
+        {
+          "run_id": "25055d67-063e-4a86-ac91-8332883635ca",
+          "scenario_id": "RE-004",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 1365.5514999991283,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "0670704d-aab1-4b5c-a1f3-ff3ec4a6317d",
+          "scenario_id": "RE-005",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 3574.0870000008726,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "6cf90477-1712-42c8-9f6b-164d21aac9e3",
+          "scenario_id": "RE-006",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 0.5,
+          "constraint_adherence": false,
+          "latency_ms": 5004.838399996515,
+          "failure_count": 3,
+          "failure_categories": [
+            "wrong_tool",
+            "wrong_tool",
+            "constraint_violation"
+          ]
+        },
+        {
+          "run_id": "f6d41c80-5ec2-457c-a3f0-e74b355bb4b4",
+          "scenario_id": "RE-007",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": false,
+          "overall_score": 0.8335,
+          "task_success": true,
+          "tool_correctness": 0.667,
+          "constraint_adherence": false,
+          "latency_ms": 6433.049100000062,
+          "failure_count": 2,
+          "failure_categories": [
+            "wrong_tool",
+            "constraint_violation"
+          ]
+        },
+        {
+          "run_id": "3103cc47-ec50-4fe2-9619-ba32debb275e",
+          "scenario_id": "RE-008",
+          "agent_version": "v1.2_premature_action",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 4422.88220001501,
+          "failure_count": 0,
+          "failure_categories": []
+        }
+      ]
+    },
+    "v1.3_wrong_tool": {
+      "agent_version": "v1.3_wrong_tool",
+      "total_scenarios": 8,
+      "passed": 3,
+      "failed": 5,
+      "pass_rate": 0.375,
+      "average_score": 0.854,
+      "total_failures": 6,
+      "results": [
+        {
+          "run_id": "3c0446c4-26d4-4ae7-aae9-12573036a465",
+          "scenario_id": "RE-001",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": false,
+          "overall_score": 0.66675,
+          "task_success": true,
+          "tool_correctness": 0.667,
+          "constraint_adherence": true,
+          "latency_ms": 93349.0926999948,
+          "failure_count": 2,
+          "failure_categories": [
+            "wrong_tool",
+            "provider_latency"
+          ]
+        },
+        {
+          "run_id": "ec1d415c-f19b-4fbd-8446-810b44657670",
+          "scenario_id": "RE-002",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 0.0,
+          "constraint_adherence": true,
+          "latency_ms": 3741.5293999947608,
+          "failure_count": 1,
+          "failure_categories": [
+            "wrong_tool"
+          ]
+        },
+        {
+          "run_id": "11221071-beb6-4885-a865-f1589765655f",
+          "scenario_id": "RE-003",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 6496.56369999866,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "eeb1294a-f36f-4ea4-966b-ac1dda2514cd",
+          "scenario_id": "RE-004",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 2766.3887000089744,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "c1a3ad30-aafe-450e-bd6e-9d5d1747ed84",
+          "scenario_id": "RE-005",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 0.0,
+          "constraint_adherence": true,
+          "latency_ms": 2329.462699999567,
+          "failure_count": 1,
+          "failure_categories": [
+            "wrong_tool"
+          ]
+        },
+        {
+          "run_id": "f4a0678b-ef11-4e99-9de1-85eaf87d8579",
+          "scenario_id": "RE-006",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 4039.9892999994336,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "d8be571b-274f-4ac1-907f-b0ae0aa1135b",
+          "scenario_id": "RE-007",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": false,
+          "overall_score": 0.91675,
+          "task_success": true,
+          "tool_correctness": 0.667,
+          "constraint_adherence": true,
+          "latency_ms": 5255.013400004827,
+          "failure_count": 1,
+          "failure_categories": [
+            "wrong_tool"
+          ]
+        },
+        {
+          "run_id": "2386f9b3-390c-47eb-9dc9-ca6053aef65b",
+          "scenario_id": "RE-008",
+          "agent_version": "v1.3_wrong_tool",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 0.0,
+          "constraint_adherence": true,
+          "latency_ms": 3134.4745000096736,
+          "failure_count": 1,
+          "failure_categories": [
+            "wrong_tool"
+          ]
+        }
+      ]
+    },
+    "v1.4_missed_escalation": {
+      "agent_version": "v1.4_missed_escalation",
+      "total_scenarios": 8,
+      "passed": 3,
+      "failed": 5,
+      "pass_rate": 0.375,
+      "average_score": 0.82,
+      "total_failures": 9,
+      "results": [
+        {
+          "run_id": "6095aa81-4947-4874-8b0f-0e64b168c3e1",
+          "scenario_id": "RE-001",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 95335.21830000973,
+          "failure_count": 1,
+          "failure_categories": [
+            "provider_latency"
+          ]
+        },
+        {
+          "run_id": "587de8fb-ce70-4e46-8475-bd443a4c4c9f",
+          "scenario_id": "RE-002",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 8091.057099998579,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "76819cd3-dbd5-477d-826e-968d3f28cad0",
+          "scenario_id": "RE-003",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": false,
+          "overall_score": 0.9375,
+          "task_success": true,
+          "tool_correctness": 0.75,
+          "constraint_adherence": true,
+          "latency_ms": 17732.875399990007,
+          "failure_count": 2,
+          "failure_categories": [
+            "wrong_tool_arguments",
+            "wrong_tool_arguments"
+          ]
+        },
+        {
+          "run_id": "0f6c99ff-e5f4-4c60-bf97-952e8372821e",
+          "scenario_id": "RE-004",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 1019.100299992715,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "1c497141-53dd-4aee-ab9e-76bf2957fda0",
+          "scenario_id": "RE-005",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": false,
+          "overall_score": 0.6875,
+          "task_success": false,
+          "tool_correctness": 1.0,
+          "constraint_adherence": false,
+          "latency_ms": 13048.9341999928,
+          "failure_count": 2,
+          "failure_categories": [
+            "incomplete_workflow",
+            "missed_escalation"
+          ]
+        },
+        {
+          "run_id": "aac9484b-3a36-40de-8d31-fe5f84bf75ef",
+          "scenario_id": "RE-006",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": false,
+          "overall_score": 0.5,
+          "task_success": false,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 74472.14259998873,
+          "failure_count": 2,
+          "failure_categories": [
+            "missed_escalation",
+            "provider_latency"
+          ]
+        },
+        {
+          "run_id": "f76f0808-c149-4c53-9f15-bcce6e6d5800",
+          "scenario_id": "RE-007",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 10181.1017,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "d632e38e-a19f-4e40-a80a-50a5b13ac719",
+          "scenario_id": "RE-008",
+          "agent_version": "v1.4_missed_escalation",
+          "overall_passed": false,
+          "overall_score": 0.6875,
+          "task_success": false,
+          "tool_correctness": 1.0,
+          "constraint_adherence": false,
+          "latency_ms": 7010.109599999851,
+          "failure_count": 2,
+          "failure_categories": [
+            "missed_escalation",
+            "missed_escalation"
+          ]
+        }
+      ]
+    },
+    "v1.5_multi_intent": {
+      "agent_version": "v1.5_multi_intent",
+      "total_scenarios": 8,
+      "passed": 5,
+      "failed": 3,
+      "pass_rate": 0.625,
+      "average_score": 0.74,
+      "total_failures": 3,
+      "results": [
+        {
+          "run_id": "88ffde66-b7ca-4a15-8350-66882d4a7532",
+          "scenario_id": "RE-001",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": false,
+          "overall_score": 0.0,
+          "task_success": false,
+          "tool_correctness": 0.0,
+          "constraint_adherence": false,
+          "latency_ms": 6936.307100011618,
+          "failure_count": 1,
+          "failure_categories": [
+            "run_error"
+          ]
+        },
+        {
+          "run_id": "877fc295-5c3c-4ced-b182-6f1615812be6",
+          "scenario_id": "RE-002",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 8106.928899986087,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "de34be0e-746a-4c56-8f5c-48b434439d76",
+          "scenario_id": "RE-003",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": false,
+          "overall_score": 0.0,
+          "task_success": false,
+          "tool_correctness": 0.0,
+          "constraint_adherence": false,
+          "latency_ms": 86877.70079998882,
+          "failure_count": 1,
+          "failure_categories": [
+            "run_error"
+          ]
+        },
+        {
+          "run_id": "da21ab80-b997-447b-9603-b28c69a94c0b",
+          "scenario_id": "RE-004",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 1273.0560999916634,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "32513844-5a9f-4e12-9408-5f661a1234e2",
+          "scenario_id": "RE-005",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 7482.421900014742,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "c0c93a67-39ed-4672-b8f7-db7118d87e1c",
+          "scenario_id": "RE-006",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 8304.670499986969,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "857e1bc0-a969-4133-abcb-619accdda56c",
+          "scenario_id": "RE-007",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": false,
+          "overall_score": 0.91675,
+          "task_success": true,
+          "tool_correctness": 0.667,
+          "constraint_adherence": true,
+          "latency_ms": 7305.440299998736,
+          "failure_count": 1,
+          "failure_categories": [
+            "wrong_tool"
+          ]
+        },
+        {
+          "run_id": "1db3d4b0-91d0-44c6-8c98-f796fb1abf3a",
+          "scenario_id": "RE-008",
+          "agent_version": "v1.5_multi_intent",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 11859.852899986436,
+          "failure_count": 0,
+          "failure_categories": []
+        }
+      ]
+    },
+    "v1.6_constraint_violation": {
+      "agent_version": "v1.6_constraint_violation",
+      "total_scenarios": 8,
+      "passed": 5,
+      "failed": 3,
+      "pass_rate": 0.625,
+      "average_score": 0.93,
+      "total_failures": 3,
+      "results": [
+        {
+          "run_id": "b9656118-9db0-4e07-ace4-4308413f613d",
+          "scenario_id": "RE-001",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 82784.00850000617,
+          "failure_count": 1,
+          "failure_categories": [
+            "provider_latency"
+          ]
+        },
+        {
+          "run_id": "0189c8a4-6837-4f37-b5ff-4f7f8348cf4a",
+          "scenario_id": "RE-002",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 5611.630200015497,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "b94bbbdf-c1c3-42f4-a0aa-156eb6d50de7",
+          "scenario_id": "RE-003",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 16885.428699999466,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "834258e9-c02e-4e48-885e-55d30018ae5f",
+          "scenario_id": "RE-004",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 2068.199300003471,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "96ca36e5-b886-44d8-b34b-7ce9aa0fe46f",
+          "scenario_id": "RE-005",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 4558.473299999605,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "b8b6612f-1ebf-439a-84cf-c53d9fad767e",
+          "scenario_id": "RE-006",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": false,
+          "overall_score": 0.75,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 85676.8238999939,
+          "failure_count": 1,
+          "failure_categories": [
+            "provider_latency"
+          ]
+        },
+        {
+          "run_id": "e9affd2a-316f-4ae6-ab65-e9f93a877d94",
+          "scenario_id": "RE-007",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": true,
+          "overall_score": 1.0,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": true,
+          "latency_ms": 5564.093599998159,
+          "failure_count": 0,
+          "failure_categories": []
+        },
+        {
+          "run_id": "9aae06e6-3f1c-4eed-9374-63df3008a986",
+          "scenario_id": "RE-008",
+          "agent_version": "v1.6_constraint_violation",
+          "overall_passed": false,
+          "overall_score": 0.9375,
+          "task_success": true,
+          "tool_correctness": 1.0,
+          "constraint_adherence": false,
+          "latency_ms": 6321.885099983774,
+          "failure_count": 1,
+          "failure_categories": [
+            "hallucination"
+          ]
+        }
+      ]
+    }
+  }
+}
