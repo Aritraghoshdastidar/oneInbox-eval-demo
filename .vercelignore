@@ -1,0 +1,27 @@
+# Exclude Python backend and model files from Vercel deployment
+app/
+app/**
+data/
+data/**
+experiments/
+experiments/**
+reports/
+reports/**
+results/
+results/**
+scenarios/
+scenarios/**
+scripts/
+scripts/**
+tests/
+tests/**
+training/
+training/**
+requirements.txt
+Pipfile*
+pyproject.toml
+setup.py
+*.py
+.env*
+*.safetensors
+*.jsonl

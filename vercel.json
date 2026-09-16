@@ -1,7 +1,3 @@
 {
-  "outputDirectory": "showcase",
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/showcase/$1" }
-  ]
+  "cleanUrls": true
 }
